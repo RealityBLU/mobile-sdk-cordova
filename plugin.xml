@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-blu-sdk" version="1.0.0" 
+    xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>BLU</name>
+    <description>Plugin provides BLU SDK functions</description>
+    <keywords>cordova,plugin,blu,ar,sdk</keywords>
+
+    <js-module name="BLU" src="www/blu-sdk.js">
+        <clobbers target="cordova.plugins.blu"/>
+    </js-module>
+
+    <dependency id="cordova-plugin-add-swift-support" version="2.0.2"/>
+    <dependency id="cordova-plugin-android-fragmentactivity" version="0.0.9"/>
+    <dependency id="cordova-support-kotlin" version="1.2.0"/>
+    <dependency id="cordova-plugin-cocoapod-support" version="1.6.2"/>
+
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="BLU">
+                <param name="android-package" value="org.apache.cordova.blu.BLU"/>
+            </feature>
+            <preference name="android-minSdkVersion" value="21" />
+            <preference name="android-targetSdkVersion" value="28" />
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.CAMERA"/>
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+        </config-file>
+
+        <source-file src="src/android/BLU.java" target-dir="src/org/apache/cordova/blu"/>
+        <resource-file src="src/android/BLUAndroidSDK.aar" target="libs/BLUAndroidSDK.aar" />
+        <framework src="src/android/BLUAndroidSDK.gradle" custom="true" type="gradleReference" />
+    </platform>
+
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="BLU">
+                <param name="ios-package" value="BLU"/>
+            </feature>
+            <preference name="UseSwiftLanguageVersion" value="4" />
+            <preference name="deployment-target" value="11.1" />
+        </config-file>
+
+        <edit-config file="*-Info.plist" mode="merge" target="NSCameraUsageDescription">
+            <string>Camera access is required for augmented reality functionality.</string>
+        </edit-config>
+        <edit-config file="*-Info.plist" mode="merge" target="NSPhotoLibraryAddUsageDescription">
+            <string>Photo additions access may be required for AR experience.</string>
+        </edit-config>
+        <edit-config file="*-Info.plist" mode="merge" target="NSCalendarsUsageDescription">
+            <string>Access to calendar is needed to add events from AR.</string>
+        </edit-config>
+        <edit-config file="*-Info.plist" mode="merge" target="NSLocationWhenInUseUsageDescription">
+            <string>Access to your geo is needed to display markerbased AR depending on your location.</string>
+        </edit-config>
+        <edit-config file="*-Info.plist" mode="merge" target="NSPhotoLibraryUsageDescription">
+            <string>Photo access may be required for AR experience.</string>
+        </edit-config>
+
+        <source-file src="src/ios/BLU.swift"/>
+        <framework src="src/ios/BLUs.framework" embed="true" custom="true" />
+        <framework src="src/ios/WikitudeSDK.framework" embed="true" custom="true" />
+        <pods-config ios-min-version="11.1" use-frameworks="true"></pods-config>
+        <!-- <pod name="Alamofire" version="4.8.0" /> -->
+        <pod name="FirebaseCore" version="6.3.3" />
+        <pod name="FirebaseAnalytics" version="6.1.5" />
+    </platform>
+</plugin>

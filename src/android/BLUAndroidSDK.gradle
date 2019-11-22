@@ -1,0 +1,26 @@
+repositories{    
+    jcenter()
+    flatDir {
+        dirs 'src/main/libs'
+    }
+}
+
+dependencies {
+    implementation(name: 'BLUAndroidSDK', ext: 'aar')
+    implementation 'com.android.support:appcompat-v7:27.+'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.0'
+    implementation 'com.google.ar:core:1.1.0'
+    implementation 'com.google.firebase:firebase-core:16.0.0'
+    implementation 'com.yanzhenjie.zbar:camera:1.0.0'
+}
+
+android {
+    packagingOptions {
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+    }
+}

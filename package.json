@@ -1,0 +1,31 @@
+{
+    "name": "@blu/cordova-plugin-blu-sdk",
+    "version": "1.0.0",
+    "description": "Plugin provides BLU SDK functions",
+    "cordova": {
+        "id": "cordova-plugin-blu-sdk",
+        "platforms": [
+            "android",
+            "ios"
+        ]
+    },
+    "publishConfig": {
+        "registry": "https://npm.hqsoftwarelab.net"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://git.hqsoftwarelab.net/blu/mobile/cordova-plugin-blu-sdk.git"
+    },
+    "keywords": [
+        "cordova",
+        "plugin",
+        "blu",
+        "ar",
+        "sdk",
+        "ecosystem:cordova",
+        "cordova-android",
+        "cordova-ios"
+    ],
+    "author": "HQSoftware",
+    "license": "ISC"
+}
