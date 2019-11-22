@@ -1,0 +1,11 @@
+framework module BLUs {
+  umbrella header "BLUs.h"
+
+  export *
+  module * { export * }
+}
+
+module BLUs.Swift {
+    header "BLUs-Swift.h"
+    requires objc
+}

@@ -1,0 +1,59 @@
+body {
+    /*  font-family: Helvetica "Helvetica Nueue" Arial;*/
+}
+
+#end-trial-popup {
+    visibility: hidden;
+}
+
+#overlay {
+    position: absolute;
+    background: rgba(0, 0, 0, .3);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0
+}
+
+#popup {
+    width: 70%;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 8px;
+    margin: 0 auto;
+    text-align: center;
+    box-sizing: border-box;
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    right: 10%;
+}
+
+#popup h3 {
+    margin: 20px 0 0 0;
+    padding: 0;
+}
+
+#popup p {
+    margin: 15px;
+    padding: 0;
+}
+
+#popup .button-holder a {
+    color: #007AFF;
+    text-decoration: none;
+    line-height: 45px;
+    font-weight: bold;
+    display: block;
+    border-top: 1px solid #000000;
+}
+
+#popup .two-button a {
+    width: 50%;
+    float: left;
+    box-sizing: border-box
+}
+
+#popup .two-button a:first-child {
+    border-right: 1px solid #000000
+}

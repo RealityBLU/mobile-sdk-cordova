@@ -1,2 +1,2 @@
 *.aar filter=lfs diff=lfs merge=lfs -text
-*.framework filter=lfs diff=lfs merge=lfs -text
+src/ios/BLUs.framework/BLUs filter=lfs diff=lfs merge=lfs -text

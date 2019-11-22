@@ -1,0 +1,834 @@
+#flip-camera-button-container,
+#printScreen-camera-button-container,
+#flightOff-button-container,
+#flightOn-button-container,
+#tracking-scan-button-single-container,
+#loadingMessage {
+    visibility: hidden;
+}
+
+#lock-camera-button-container,
+#title-display-container,
+#scan-button,
+#tracking-qr-scan-button-container,
+#unlock-camera-button-container {
+    display: none;
+}
+
+#tracking-model-back-button-container {
+    visibility: visible;
+}
+
+.centered {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+.small-icon {
+    width: auto;
+    height: 9vw;
+}
+
+.dropdown_exp_list_button {
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    width: 50vw;
+    text-align: center;
+    height: 13vw;
+    font-family: Roboto;
+    font-size: 26px;
+    line-height: 13vw;
+    outline: none;
+    padding: 0;
+    background-color: #69C6B0;
+    border-radius: 3px;
+    color: #ffffff;
+}
+
+.dropdown_exp_list_button:hover, .dropdown_exp_list_button:focus {
+    background-color: #2cc6b1;
+}
+
+.dropdown_exp_list {
+    position: absolute;
+    display: none;
+    top: 2vw;
+    line-height: 13vw;
+    z-index: 1000000;
+}
+
+.dropdown_exp_list .fa {
+    line-height: 13vw;
+    padding-right: 10px;
+    position: absolute;
+    right: 0;
+}
+
+.dropdown_exp_list_content {
+    display: none;
+    position: absolute;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    width: 50vw;
+    border: none;
+    cursor: pointer;
+    margin-top: 13vw;
+    max-height: 70vw;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 26px;
+    line-height: 13vw;
+    overflow: auto;
+    outline: none;
+    background-color: white;
+    color: #b4b4b4;
+    border-radius: 3px;
+}
+
+.dropdown_exp_list_content .child-dropdown {
+    display: block;
+    position: relative;
+    height: 10vw;
+    line-height: 10vw;
+    font-size: 19px;
+    text-align: left;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.dropdown_exp_list_content .child-dropdown.active {
+    color: #2cc6b1;
+}
+
+.dropdown_exp_list_content .child-dropdown:hover, .dropdown_exp_list_content .child-dropdown:focus {
+    background-color: #2cc6b1;
+    border-radius: 3px;
+    color: white;
+}
+
+.dropdown_exp_list_content .child-dropdown .fa {
+    line-height: 10vw;
+}
+
+.big-text-child,
+.big-text {
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    position: relative;
+    max-width: 69%;
+}
+
+.big-text-child {
+    height: 10vw;
+    line-height: 9vw;
+    max-width: 90%;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: block;
+    visibility: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.icon-actions {
+    position: relative;
+    display: inline-block;
+    font-size: 6.4vw;
+    color: white;
+    vertical-align: middle;
+    opacity: 1;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    z-index: 101;
+}
+
+.swiper-slide.slide-1 {
+    background: url(../assets/img/tutorial_default_image1.png) center center no-repeat;
+    background-size: 90vw;
+}
+
+.slide-1 .text-point-camera {
+    font-size: 25px;
+    text-align: center;
+}
+
+.swiper-slide.slide-2 {
+    background: url(../assets/img/tutorial_default_image2.png) center center no-repeat;
+    background-size: 90vw;
+}
+
+.swiper-slide.slide-3 {
+    background: url(../assets/img/tutorial_default_image3.png) center center no-repeat;
+    background-size: 90vw;
+}
+
+.swiper-pagination.swiper-pagination-bullets {
+    width: 20vw;
+    bottom: 30vw;
+}
+
+.swiper-pagination .swiper-pagination-bullet {
+    background: #F8F4F4;
+    border: 1px solid #707070;
+    opacity: 0.43;
+}
+
+.swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: #F8F4F4;
+    opacity: 1;
+}
+
+.show-screen-again-container {
+    position: absolute;
+    width: 100vw;
+    height: auto;
+    top: 25vw;
+    text-align: center;
+    z-index: 102;
+}
+
+.lock-indicator-text-container {
+    position: absolute;
+    width: 100vw;
+    height: auto;
+    bottom: 18vw;
+    text-align: center;
+    font-size: 15px;
+    outline: none;
+    padding: 0;
+}
+
+.save-picture-mode-container {
+    position: absolute;
+    width: 31vw;
+    height: auto;
+    right: 3.13vw;
+    bottom: 17vw;
+    outline: none;
+    padding: 0;
+}
+
+.lock-mode-container {
+    position: absolute;
+    width: 31vw;
+    height: auto;
+    left: 3.13vw;
+    bottom: 5vw;
+    text-align: left;
+    font-size: 16px;
+    outline: none;
+    padding: 0;
+}
+
+.text {
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+    font-size: 15px;
+}
+
+.text.screen-again-text-tutorial {
+    padding-left: 32px;
+}
+
+.text.flight-text-tutorial {
+    position: absolute;
+    width: 18vw;
+    height: auto;
+    bottom: 3vw;
+    text-align: center;
+    font-size: 14px;
+    outline: none;
+    padding: 0;
+}
+
+#show-screen-tutorial-again-container {
+    display: inline-block;
+    z-index: -10;
+    opacity: 0;
+    position: absolute;
+    background-color: transparent;
+    border: 1px solid #FFFFFF;
+}
+
+#show-screen-tutorial-again-container + label {
+    position: relative;
+    cursor: pointer;
+}
+
+#show-screen-tutorial-again-container:checked + label:before {
+    content: "";
+    position: absolute;
+    cursor: pointer;
+    color: #FFFFFF;
+    background: transparent url(../assets/img/icon-check.svg) no-repeat center center;
+    background-size: 70%;
+    display: inline-block;
+    border: 1px solid #FFFFFF;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    bottom: -3px;
+}
+
+#show-screen-tutorial-again-container + label:before {
+    content: "";
+    position: absolute;
+    cursor: pointer;
+    color: #FFFFFF;
+    background-color: transparent;
+    display: inline-block;
+    border: 1px solid #FFFFFF;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    bottom: -3px;
+}
+
+.skip-tutorial-container {
+    position: absolute;
+    width: 8vw;
+    height: auto;
+    left: 3.13vw;
+    bottom: 30vw;
+    text-align: center;
+    font-size: 14px;
+    outline: none;
+    padding: 0;
+    font-weight: 800;
+    color: #FFFFFF;
+    cursor: pointer;
+    z-index: 102;
+}
+
+.skip-tutorial-container.hide-swiper {
+    left: initial;
+    right: 3.13vw;
+}
+
+.skip-tutorial-container:hover {
+    color: #DFDFDF;
+}
+
+.info {
+    font-size: medium;
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    height: 50vw;
+    padding: 0;
+    color: white;
+}
+
+.scanning-text-container {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 7vw;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.tracking-model-back-button {
+    position: absolute;
+    height: 8vw;
+    line-height: 9vw;
+    left: 3.13vw;
+    top: 2.4vh;
+    text-align: center;
+    font-size: 0;
+    outline: none;
+    padding: 0;
+    z-index: 100000;
+}
+
+.tracking-qr-scan-button,
+.flightOff-camera-button,
+.flightOn-camera-button {
+    position: absolute;
+    line-height: 9vw;
+    left: 3.13vw;
+    bottom: 4vw;
+    text-align: center;
+    font-size: 0;
+    outline: none;
+    padding: 0;
+}
+
+.tracking-qr-scan-button {
+    right: 3.13vw;
+    bottom: initial;
+    left: initial;
+    top: 2.4vh;
+}
+
+.printScreen-camera-button,
+.flip-camera-button {
+    position: absolute;
+    line-height: 9vw;
+    right: 3.13vw;
+    bottom: 4vw;
+    text-align: center;
+    font-size: 0;
+    outline: none;
+    border-radius: 0;
+}
+
+.tracking-scan-button-single {
+    width: 20vw;
+    height: auto;
+    position: absolute;
+    bottom: 2vw;
+    outline: 0;
+    padding: 0;
+}
+
+.unlock-camera-button,
+.lock-camera-button,
+.unlock-camera-button-tutorial {
+    position: absolute;
+    padding: 0;
+    font-size: 0;
+    bottom: 4vw;
+    outline: none;
+    z-index: 1000000;
+}
+
+.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.scan-button {
+    position: absolute;
+    width: 25vw;
+    height: auto;
+    bottom: 8vw;
+    outline: none;
+    z-index: 1000000;
+}
+
+.text-title-container {
+    position: absolute;
+    width: 50vw;
+    text-align: left;
+    height: 13vw;
+    top: 2vw;
+    font-family: Roboto;
+    font-size: 16px;
+    line-height: 13vw;
+    display: none;
+    outline: none;
+    padding: 0;
+    z-index: 1000000;
+    background-color: #69C6B0;
+    border-radius: 9px;
+    color: #ffffff;
+}
+
+.text-title-container img {
+    height: auto;
+    position: relative;
+    display: inline-block;
+    float: left;
+    max-height: 60%;
+    top: 50%;
+    transform: translateY(-50%);
+    vertical-align: middle;
+    margin: 0 2vw;
+}
+
+.text-title-container .text-title {
+    word-break: break-all;
+    color: #FFFFFF;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    position: relative;
+    font-weight: 500;
+    float: left;
+    text-align: left;
+    max-width: 38vw;
+    display: inline-block;
+}
+
+.tracking-trial-button {
+    visibility: hidden;
+    position: absolute;
+    width: auto;
+    height: 9.82vw;
+    line-height: 9.82vw;
+    right: 3.13vw;
+    bottom: 16vw;
+    text-align: center;
+    font-size: 0;
+    outline: none;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    border-radius: 0;
+
+}
+
+.anim-poor_connection {
+    animation-name: keyframes-poor-connection;
+    animation-duration: 2s;
+    animation-iteration-count: 2;
+}
+
+#snapContainer {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50%;
+    margin-left: -50%;
+}
+
+#snapContainer:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+
+
+#poor-connection-view {
+    font-family: Roboto;
+    position: absolute;
+    visibility: hidden;
+    display: block;
+    text-align: center;
+    bottom: 10vw;
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: auto;
+    background-color: rgba(0, 0, 0, .15);
+    z-index: 1;
+    color: #FFFFFF;
+    font-size: 5vw;
+    line-height: 7vw;
+    opacity: 0;
+    padding-top: 3vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+.text-poor-connection-view {
+    position: relative;
+    color: rgba(255, 255, 255, .7);
+    text-align: center;
+    margin: auto;
+    user-select: none;
+    padding: 1vw;
+}
+
+.normal-mode {
+    margin: 0;
+}
+
+.trial-mode {
+    margin: 0;
+    background-image: url(../assets/img/watermark_small.png);
+    background-repeat: repeat;
+}
+
+/* Standard syntax */
+@keyframes keyframes-poor-connection {
+    0% {
+        opacity: 1;
+        visibility: visible
+    }
+    10% {
+        opacity: 1;
+    }
+    20% {
+        opacity: 0.7;
+    }
+    30% {
+        opacity: 0.4;
+    }
+    40% {
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 0.7;
+    }
+    80% {
+        opacity: 0.4;
+    }
+    90% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 1;
+        visibility: hidden
+    }
+}
+
+@media (orientation: landscape) {
+    .scanning-text-container {
+        height: 7vh;
+    }
+
+    .text-title-container {
+        width: 60vh;
+        height: 9vh;
+        top: 2vh;
+        line-height: 9vh;
+    }
+
+    .text-title-container img {
+        margin: 0 2vh;
+    }
+
+    .text-title-container .text-title {
+        max-width: 48vh;
+    }
+
+    #snapContainer {
+        height: 100vh;
+        box-sizing: border-box;
+        width: 99vh;
+        margin-top: 0;
+        margin-left: auto;
+        display: block;
+        margin-right: auto;
+        position: relative;
+        left: 0;
+    }
+
+    .icon-actions {
+        font-size: 6.4vh;
+    }
+
+    .info {
+        height: 50vh;
+        width: auto;
+    }
+
+    .tracking-trial-button {
+        height: 9.82vh;
+        width: auto;
+        line-height: 9.82vh;
+        right: 3.13vh;
+        bottom: 16vh;
+        padding-left: 2vw;
+        padding-right: 2vw;
+        border-radius: 0;
+    }
+
+    .tracking-scan-button-single {
+        position: absolute;
+        width: 18vh;
+        right: 3vh;
+        transform: translateY(-50%);
+        margin-left: auto;
+        margin-right: auto;
+        left: initial;
+        top: 50%;
+    }
+
+    .tracking-model-back-button {
+        width: auto;
+        top: 5.86vh;
+        left: 6vh;
+        height: 8vh;
+    }
+
+    .tracking-qr-scan-button,
+    .flightOff-camera-button,
+    .flightOn-camera-button {
+        height: 9vh;
+        width: auto;
+        line-height: 9vh;
+        left: 3.13vh;
+        bottom: 4vh;
+        padding-left: 2vw;
+        padding-right: 2vw;
+        border-radius: 0;
+    }
+
+    .tracking-qr-scan-button {
+        top: 6vh;
+        right: 3.13vh;
+        left: initial;
+        bottom: initial;
+    }
+
+    .printScreen-camera-button,
+    .flip-camera-button {
+        line-height: 9vh;
+        right: 3.13vh;
+        height: 9vh;
+        width: auto;
+        bottom: 4vh;
+        padding-left: 2vw;
+        padding-right: 2vw;
+        border-radius: 0;
+    }
+
+    .unlock-camera-button,
+    .lock-camera-button,
+    .unlock-camera-button-tutorial {
+        height: 9vh;
+        width: auto;
+        bottom: 4vh;
+    }
+
+    .scan-button {
+        width: 25vh;
+        left: initial;
+        right: 10vh;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .swiper-pagination.swiper-pagination-bullets {
+        bottom: 25vh;
+        width: 20vh;
+    }
+
+    .swiper-slide.slide-1 {
+        background-size: 50vh;
+    }
+
+    .swiper-slide.slide-2 {
+        background-size: 50vh;
+    }
+
+    .swiper-slide.slide-3 {
+        background-size: 50vh;
+    }
+
+    .show-screen-again-container {
+        top: 4vh;
+    }
+
+    .skip-tutorial-container {
+        width: 8vh;
+        left: 3.13vh;
+        bottom: 25vh;
+        padding-left: 2vw;
+    }
+
+    .skip-tutorial-container.hide-swiper {
+        left: initial;
+        right: 3.13vh;
+        padding-right: 2vw;
+    }
+
+    .text.flight-text-tutorial {
+        width: 18vh;
+        bottom: 3vh;
+    }
+
+    .lock-indicator-text-container {
+        bottom: 14vh;
+    }
+
+
+    .lock-mode-container {
+        left: 3.13vh;
+        padding-left: 2vw;
+        bottom: 4vh;
+        width: 47vh;
+    }
+
+    .save-picture-mode-container {
+        width: 31vh;
+        right: 21vh;
+        bottom: 4vh;
+    }
+
+    #poor-connection-view {
+        font-size: 5vh;
+        line-height: 7vh;
+        bottom: 5vh;
+    }
+
+    .dropdown_exp_list_button {
+        width: 60vh;
+        height: 9vh;
+        line-height: 9vh;
+    }
+
+    .dropdown_exp_list {
+        top: 2vh;
+        line-height: 13vh;
+    }
+
+    .dropdown_exp_list .fa {
+        line-height: 9vh;
+    }
+
+    .dropdown_exp_list_content {
+        width: 60vh;
+        margin-top: 9vh;
+        max-height: 55vh;
+        line-height: 13vh;
+    }
+
+    .dropdown_exp_list_content .child-dropdown {
+        height: 8vh;
+        line-height: 8vh;
+    }
+
+    .dropdown_exp_list_content .child-dropdown .fa {
+        line-height: 8vh;
+    }
+
+    .big-text-child {
+        height: 7vh;
+        line-height: 8vh;
+    }
+}
+
+*::-moz-selection {
+    background-color: transparent;
+}
+
+* {
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}

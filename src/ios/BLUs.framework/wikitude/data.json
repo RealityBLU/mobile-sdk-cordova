@@ -1,0 +1,17 @@
+[{
+	"name": "Furnish the room",
+	"path": "markerless/index.html",
+	"requiredFeatures": ["markerless"],
+	"startupConfiguration": {
+		"camera_position": "back"
+	}
+},
+	{
+	"name": "Scan with Wikitude",
+	"path": "markerbased/index.html",
+	"requiredFeatures": ["image_tracking"],
+	"startupConfiguration": {
+		"camera_resolution": "auto",
+		"camera_position": "back"
+	}
+}]

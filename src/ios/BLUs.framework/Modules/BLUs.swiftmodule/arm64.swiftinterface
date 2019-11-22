@@ -1,0 +1,253 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.1.2 effective-4.1.50 (swiftlang-1100.0.278 clang-1100.0.33.9)
+// swift-module-flags: -target arm64-apple-ios11.1 -enable-objc-interop -enable-library-evolution -swift-version 4 -enforce-exclusivity=checked -O -module-name BLUs
+import AVFoundation
+import AdSupport
+@_exported import BLUs
+import Contacts
+import ContactsUI
+import CoreLocation
+import Dispatch
+import EventKit
+import FirebaseAnalytics
+import FirebaseCore
+import Foundation
+import MessageUI
+import MobileCoreServices
+import SafariServices
+import Swift
+import SystemConfiguration
+import UIKit
+public protocol APIHandler {
+  mutating func endUserLoginEndPoint() -> Swift.String
+  mutating func endUserEmailPass() -> Swift.String
+  mutating func getListMarkerlessExperienceEndPoint() -> Swift.String
+  mutating func getGroupsMarkerlessExperienceEndPoint() -> Swift.String
+  mutating func getMarkerlessExperienceById() -> Swift.String
+  mutating func getMarkerbasedTargets() -> Swift.String
+  mutating func sendFeedBackEndPoint() -> Swift.String
+  mutating func sendUserInfoEndPoint() -> Swift.String
+  mutating func getUserPersonalVideo() -> Swift.String
+  mutating func initAREndPoint() -> Swift.String
+  mutating func getBluAirSpace() -> Swift.String
+  mutating func getMarkerlessMarkerbasedUrl() -> Swift.String
+}
+@objc public class SwiftFromObjCBridge : ObjectiveC.NSObject {
+  @objc public class func sInst() -> BLUs.SwiftFromObjCBridge
+  @objc public var onCachedUrlsReady: (() -> Swift.Void)?
+  @objc public var onPersonalVideoDownloaded: (() -> Swift.Void)?
+  @objc public var onNextFileLoaded: (() -> Swift.Void)?
+  @objc public var onLoadingComplete: (() -> Swift.Void)?
+  @objc public var onPathsArrayChanged: (() -> Swift.Void)?
+  @objc public var arExperience: BLUs.WTAugmentedRealityExperience?
+  @objc public var isMarkerlessAR: Swift.Bool
+  @objc public var arType: Swift.Int
+  @objc public var licenseKey: Swift.String
+  @objc public var bluLicenseKey: Swift.String
+  @objc public var personalVideoDownloaded: Swift.String {
+    @objc get
+    @objc set
+  }
+  @objc public var personalVideoDownloadedId: Swift.String
+  @objc public var scanExperiencesCached: Swift.String {
+    @objc get
+    @objc set
+  }
+  @objc public var allFilesLoaded: Swift.String {
+    @objc get
+    @objc set
+  }
+  @objc public var scanExperienceDownloaded: Swift.String {
+    @objc get
+    @objc set
+  }
+  @objc public var experiencesPathsArrayString: Swift.String {
+    @objc get
+    @objc set
+  }
+  @objc public func activateMarkerLessExperienceDoNotShowTips()
+  @objc public func getMarkerLessExperienceDoNotShowTipsActivated() -> Swift.Bool
+  @objc public func getMarkerbasedClientToken() -> Swift.String
+  @objc public func getMarkerbasedCollectionId() -> Swift.String
+  @objc public func getMarkerbasedGroupId() -> Swift.String
+  @objc public func getProofingCollectionId() -> Swift.String
+  @objc public func getKnownLocation() -> [Swift.Double]
+  @objc public func getEmailUserSelfFromPref() -> Swift.String
+  @objc public func getIsNeedMarkerBasedTutorial() -> Swift.Bool
+  @objc public func setNeedMarkerBasedTutorial(value: Swift.Bool)
+  @objc public func getMarkerlessMarkerbasedUrl() -> Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+public struct UserInfo : Swift.Decodable {
+  public var firstName: Swift.String
+  public var secondName: Swift.String
+  public var email: Swift.String
+  public var businessName: Swift.String
+  public var industry: Swift.String
+  public var music: Swift.String
+  public var gender: Swift.String
+  public init()
+  public init(firstName: Swift.String, secondName: Swift.String, email: Swift.String, businessName: Swift.String, industry: Swift.String, music: Swift.String, gender: Swift.String)
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct FeedbackData {
+  public var name: Swift.String
+  public var email: Swift.String
+  public var phone: Swift.String
+  public var comment: Swift.String
+  public var os: Swift.String
+  public var appId: Swift.String
+  public var captcha: Swift.String
+  public init(name: Swift.String, email: Swift.String, phone: Swift.String, comment: Swift.String, os: Swift.String, appId: Swift.String, captcha: Swift.String)
+}
+public struct MarkerbasedMarker : Swift.Decodable, Swift.Encodable {
+  public let title: Swift.String
+  public let icon: Swift.String
+  public let target_file: Swift.String
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct MarkerlessGroup : Swift.Decodable, Swift.Encodable {
+  public let account_id: Swift.Int?
+  public let id: Swift.Int?
+  public let image: Swift.String?
+  public let name: Swift.String?
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct MarkerbasedOptions {
+  public var proofingEnabled: Swift.Bool
+  public var singleScanEnabled: Swift.Bool
+  public init()
+  public init(enableProofing proofing: Swift.Bool = false, enableSingleScan singleScan: Swift.Bool = false)
+}
+public struct MarkerlessExperience : Swift.Decodable, Swift.Encodable, Swift.Equatable {
+  public let id: Swift.Int?
+  public let name: Swift.String?
+  public let image: Swift.String?
+  public let icon: Swift.String?
+  public let description: Swift.String?
+  public let file_name: Swift.String?
+  public let shop_url: Swift.String?
+  public let obj_animations: Swift.String?
+  public var group: Swift.String?
+  public var subgroup: Swift.String?
+  public var audio_file: Swift.String?
+  public var audio_loop: Swift.Int?
+  public var scale: [Swift.Float]?
+  public var position: [Swift.Float]?
+  public var rotation: [Swift.Float]?
+  public var scale_mobile: Swift.Float?
+  public static func == (lhs: BLUs.MarkerlessExperience, rhs: BLUs.MarkerlessExperience) -> Swift.Bool
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct ARContact {
+  public let name: Swift.String
+  public var nameCompany: Swift.String?
+  public var title: Swift.String?
+  public var phone: Swift.String?
+  public var phoneType: Swift.String?
+  public var email: Swift.String?
+  public var emailType: Swift.String?
+}
+@objc public class DebugTools : ObjectiveC.NSObject {
+  public static func setEnvironmentType(environmentType: BLUs.APIHandler?)
+  public static func mock()
+  public static func unMock()
+  public static func enableLogging(enable: Swift.Bool)
+  public static func enableAnalytics(enable: Swift.Bool)
+  public static func setEnvironment(EnvironmentName: Swift.String)
+  public static func disableTutorial()
+  @objc override dynamic public init()
+  @objc deinit
+}
+public enum UserIndustry : Swift.String {
+  case unspecified
+  case Healthcare
+  case Finance
+  case Marketing
+  case Manufacturing
+  case Entertainment
+  case Sports
+  case Other
+  public func string() -> Swift.String
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum UserMusic : Swift.String {
+  case unspecified
+  case Alternative
+  case Classical
+  case Country
+  case RnB
+  case ClassicRock
+  case Jazz
+  public func string() -> Swift.String
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public protocol BLUARController : UIKit.UIViewController {
+  var options: BLUs.MarkerbasedOptions? { get set }
+}
+public enum BLUErrorType {
+  case warning, error
+  public static func == (a: BLUs.BLUErrorType, b: BLUs.BLUErrorType) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public protocol BLUError {
+  var type: BLUs.BLUErrorType { get }
+  var description: Swift.String { get }
+}
+public typealias PreparationCallback = (BLUs.BLUARController?, BLUs.BLUError?) -> Swift.Void
+public typealias TaskCallback = (BLUs.BLUError?) -> Swift.Void
+@objc public class BLU : ObjectiveC.NSObject {
+  public static func initialize(_ licenseKey: Swift.String, completion: BLUs.TaskCallback? = nil)
+  public static func prepareMarkerbased(_ completion: @escaping BLUs.PreparationCallback)
+  public static func prepareMarkerbased(withOptions options: BLUs.MarkerbasedOptions, completion: @escaping BLUs.PreparationCallback)
+  public static func prepareMarkerlessExperiences(_ experiences: [BLUs.MarkerlessExperience], withProgress progress: ((Swift.Float) -> Swift.Void)?, completion: @escaping BLUs.PreparationCallback)
+  public static func prepareMarkerlessExperiences(_ experiences: [BLUs.MarkerlessExperience], completion: @escaping BLUs.PreparationCallback)
+  @objc override dynamic public init()
+  @objc deinit
+}
+public class BLUDataHelper {
+  public static func getMarkerbasedMarkers(completion: @escaping ([BLUs.MarkerbasedMarker]) -> Swift.Void)
+  public static func getMarkerlessGroups(_ completion: @escaping ([BLUs.MarkerlessGroup]) -> Swift.Void)
+  public static func getMarkerlessExperiences(groupId: Swift.Int, completion: @escaping ([BLUs.MarkerlessExperience]) -> Swift.Void)
+  @objc deinit
+}
+public class BLUUserHelper {
+  public static func sendFeedback(_ feedback: BLUs.FeedbackData, completion: @escaping BLUs.TaskCallback)
+  public static func sendUserInfo(info: BLUs.UserInfo, onSuccess: @escaping (() -> Swift.Void), onError: @escaping (() -> Swift.Void))
+  @objc deinit
+}
+public class BLUTrialHelper {
+  public static func getTrialEmail() -> Swift.String
+  public static func setTrial(email trialEmail: Swift.String, onSuccess: @escaping (() -> Swift.Void), onError: @escaping ((Swift.String) -> Swift.Void))
+  @objc deinit
+}
+@objc public class MarkerbasedDownloadUtililty : ObjectiveC.NSObject {
+  @objc public class func sharedInstance() -> BLUs.MarkerbasedDownloadUtililty
+  @objc public func doDownloadPersonalVideo(dataJson: [Swift.String : Any])
+  @objc public func doDownloadData(dataJson: [Swift.String : Any], onCancelDownload: @escaping (() -> Swift.Void))
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension BLUs.UserIndustry : Swift.Equatable {}
+extension BLUs.UserIndustry : Swift.Hashable {}
+extension BLUs.UserIndustry : Swift.RawRepresentable {}
+extension BLUs.UserMusic : Swift.Equatable {}
+extension BLUs.UserMusic : Swift.Hashable {}
+extension BLUs.UserMusic : Swift.RawRepresentable {}
+extension BLUs.BLUErrorType : Swift.Equatable {}
+extension BLUs.BLUErrorType : Swift.Hashable {}
