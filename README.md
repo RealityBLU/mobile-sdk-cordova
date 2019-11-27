@@ -19,3 +19,60 @@ cordova build android
 iOS notes:
 - This plugin requires a signing of code. You should open a generated project (after step 2) by xcode and select a necessary provisioning profile.
 - iOS sdk works only with real devices (not simulators). For build your project you should connect any device with iOS.
+
+# Initialization
+Before we start please visit our [BLUairspace](https://www.realityblu.com) site to obtain unique RealityBLU license key linked to bundle identifier of your application.
+```js
+blu.init(licenseKey, () => {
+    // handle a success result
+}, (error) => {
+    // handle an error result
+});
+```
+This method will send an initialization request to BLUs server and obtain all the needed data.
+
+# API
+
+## Markerbased
+By calling this API you create a new screen that is needed to scan markers and display experiences after the marker is detected. 
+```js
+blu.startMarkerbased(options, () => {
+    // handle a success result
+}, (error) => {
+    // handle an error result
+});
+```
+Available options
+```js
+{
+    isSingleScanEnabled, // for single scan mode, type boolean, by default false
+    isProofingEnabled // for proofing mode, type boolean, by default false
+}
+```
+After that user can start pointing the camera at the marker. When the marker is recognized, the experience will be downloaded and shown.
+
+## Markerless
+Markerless API allows you to upload your own models and create groups with them, that allows user find what they need to see. Markerless API helps you to download and initialize user selected experiences as well as prepare augmented reality camera screen to appear. 
+```js
+blu.startMarkerless(arrayOfExperiences, () => {
+    // handle a success result
+}, (error) => {
+    // handle an error result
+});
+```
+To get the list of formed groups, you'll need to make the following method call
+```js
+blu.getMarkerlessGroups((groups) => {
+    // handle a success result
+}, (error) => {
+    // handle an error result
+});
+```
+After that you could obtain markerless experience list out of selected group by the method call
+```js
+blu.getMarkerlessExperiences(groupId, (experiences) => {
+    // handle a success result
+}, (error) => {
+    // handle an error result
+});
+```
