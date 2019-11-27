@@ -18,6 +18,23 @@ BLU.prototype.init = function(key, success, error) {
     );
 }
 
+BLU.prototype.getMarkerbasedMarkers = function(success, error) {
+    cordova.exec(
+        (result) => {
+            if(typeof success  === 'function') {
+                success(JSON.parse(result))
+            }
+        },
+        (result) => {
+            if(typeof error  === 'function') {
+                error(result);
+            }
+        }, 
+        'BLU', 
+        'getMarkerbasedMarkers'
+    );
+}
+
 BLU.prototype.getMarkerlessGroups = function(success, error) {
     cordova.exec(
         (result) => {

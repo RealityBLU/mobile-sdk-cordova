@@ -27,6 +27,34 @@ import AVFoundation
         }
     }
 
+    @objc(getMarkerbasedMarkers:)
+    func getMarkerbasedMarkers(command: CDVInvokedUrlCommand) {
+        BLUDataHelper.getMarkerbasedMarkers(){ (markers)  in
+            let encoder = JSONEncoder()
+
+            do {
+                let markersJSON = try encoder.encode(markers)
+               
+                self.commandDelegate!.send(
+                    CDVPluginResult(
+                        status: CDVCommandStatus_OK,
+                        messageAs: String(data: markersJSON, encoding: .utf8)!
+                    ),
+                    callbackId: command.callbackId
+                )
+                
+            } catch {
+                self.commandDelegate!.send(
+                    CDVPluginResult(
+                        status: CDVCommandStatus_OK,
+                        messageAs: "[]"
+                    ),
+                    callbackId: command.callbackId
+                )
+            }
+        }
+    }
+
     @objc(getMarkerlessGroups:)
     func getMarkerlessGroups(command: CDVInvokedUrlCommand) {
         BLUDataHelper.getMarkerlessGroups(){ (groups)  in

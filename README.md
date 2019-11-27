@@ -2,7 +2,7 @@
 
 ## 1. Add plugin to a project
 ```sh
-cordova plugin add https://github.com/RealityBLU/mobile-sdk-cordova.git#v1.0.0
+cordova plugin add https://github.com/RealityBLU/mobile-sdk-cordova.git#v1.1.0
 ```
 Important note!
 - The above command should be run for each new environment for set up all dependencies.
@@ -45,11 +45,20 @@ blu.startMarkerbased(options, () => {
 Available options
 ```js
 {
-    isSingleScanEnabled, // for single scan mode, type boolean, by default false
     isProofingEnabled // for proofing mode, type boolean, by default false
 }
 ```
 After that user can start pointing the camera at the marker. When the marker is recognized, the experience will be downloaded and shown.
+
+BLUairspace platform allows to upload markers and associate them with your application. This is sufficient for letting your end-users download and print markers on their own. Please note that the list of downloadable markers is configured separately from the markers you use in your experiences.
+You can get the list of configured markers using `getMarkerbasedMarkers`.
+```js
+blu.getMarkerbasedMarkers((markers) => {
+    // handle a success result
+}, (error) => {
+    // handle an error result
+});
+```
 
 ## Markerless
 Markerless API allows you to upload your own models and create groups with them, that allows user find what they need to see. Markerless API helps you to download and initialize user selected experiences as well as prepare augmented reality camera screen to appear. 

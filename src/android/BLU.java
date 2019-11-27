@@ -3,6 +3,7 @@ package org.apache.cordova.blu;
 import android.support.v4.app.FragmentActivity;
 import com.bluairspace.sdk.helper.Blu;
 import com.bluairspace.sdk.helper.data.BluDataHelper;
+import com.bluairspace.sdk.model.MarkerbasedMarker;
 import com.bluairspace.sdk.model.MarkerBasedSettings;
 import com.bluairspace.sdk.model.MarkerlessGroup;
 import com.bluairspace.sdk.model.MarkerlessExperience;
@@ -30,33 +31,36 @@ public class BLU extends CordovaPlugin {
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         switch (action) {
-            case "init":
-                String key = args.getString(0);
-                this.init(key, callbackContext);
-                return true;
-            case "getMarkerlessGroups":
-                this.getMarkerlessGroups(callbackContext);
-                return true;
-            case "getMarkerlessExperiences":
-                Integer groupId = args.getInt(0);
-                this.getMarkerlessExperiences(groupId, callbackContext);
-                return true;
-            case "startMarkerbased":
-                JSONObject settingsJSON = args.getJSONObject(0);
-                MarkerBasedSettings settings = gson.fromJson(settingsJSON.toString(), MarkerBasedSettings.class);
-                this.startMarkerbased(settings, callbackContext);
-                return true;
-            case "startMarkerless":
-                List<MarkerlessExperience> markers = new ArrayList<>();
-                for (int i = 0; i < args.length(); i++) {
-                    JSONObject markerJSON = args.getJSONObject(i);
-                    MarkerlessExperience marker = gson.fromJson(markerJSON.toString(), MarkerlessExperience.class);
-                    markers.add(marker);
-                }
-                this.startMarkerless(markers, callbackContext);
-                return true;
-            default:
-                break;
+        case "init":
+            String key = args.getString(0);
+            this.init(key, callbackContext);
+            return true;
+        case "getMarkerbasedMarkers":
+            this.getMarkerbasedMarkers(callbackContext);
+            return true;
+        case "getMarkerlessGroups":
+            this.getMarkerlessGroups(callbackContext);
+            return true;
+        case "getMarkerlessExperiences":
+            Integer groupId = args.getInt(0);
+            this.getMarkerlessExperiences(groupId, callbackContext);
+            return true;
+        case "startMarkerbased":
+            JSONObject settingsJSON = args.getJSONObject(0);
+            MarkerBasedSettings settings = gson.fromJson(settingsJSON.toString(), MarkerBasedSettings.class);
+            this.startMarkerbased(settings, callbackContext);
+            return true;
+        case "startMarkerless":
+            List<MarkerlessExperience> markers = new ArrayList<>();
+            for (int i = 0; i < args.length(); i++) {
+                JSONObject markerJSON = args.getJSONObject(i);
+                MarkerlessExperience marker = gson.fromJson(markerJSON.toString(), MarkerlessExperience.class);
+                markers.add(marker);
+            }
+            this.startMarkerless(markers, callbackContext);
+            return true;
+        default:
+            break;
         }
         return false;
     }
@@ -67,6 +71,20 @@ public class BLU extends CordovaPlugin {
             key, 
             this.getTaskCallback(callbackContext)
         );
+    }
+
+    private void getMarkerbasedMarkers(CallbackContext callbackContext) {
+        BluDataHelper.INSTANCE.getMarkerbasedMarkers(new DataCallback<MarkerbasedMarker>() {
+            @Override
+            public void onSuccess(List<? extends MarkerbasedMarker> list) {
+                callbackContext.success(gson.toJson(list));
+            }
+
+            @Override
+            public void onFail(String errorMessage) {
+                callbackContext.error(errorMessage);
+            }
+        });
     }
 
     private void getMarkerlessGroups(CallbackContext callbackContext) {
@@ -117,7 +135,6 @@ public class BLU extends CordovaPlugin {
             this.getTaskCallback(callbackContext)
         );
     }
-
 
     private TaskCallback getTaskCallback(CallbackContext callbackContext) {
         return new TaskCallback() {
