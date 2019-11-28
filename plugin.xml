@@ -31,6 +31,7 @@
 
         <source-file src="src/android/BLU.java" target-dir="src/org/apache/cordova/blu"/>
         <resource-file src="src/android/BLUAndroidSDK.aar" target="libs/BLUAndroidSDK.aar" />
+        <resource-file src="BLUcustomization" target="assets/BLUcustomization" />
         <framework src="src/android/BLUAndroidSDK.gradle" custom="true" type="gradleReference" />
     </platform>
 
@@ -62,6 +63,7 @@
         <source-file src="src/ios/BLU.swift"/>
         <framework src="src/ios/BLUs.framework" embed="true" custom="true" />
         <framework src="src/ios/WikitudeSDK.framework" embed="true" custom="true" />
+        <resource-file src="BLUcustomization" target="BLUcustomization" />
         <pods-config ios-min-version="11.1" use-frameworks="true"></pods-config>
         <!-- <pod name="Alamofire" version="4.8.0" /> -->
         <pod name="FirebaseCore" version="6.3.3" />
