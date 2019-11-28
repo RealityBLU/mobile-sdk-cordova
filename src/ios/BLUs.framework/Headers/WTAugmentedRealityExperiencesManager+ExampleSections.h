@@ -3,6 +3,9 @@
 
 typedef void(^WTAugmentedRealityExperiencesLoadCompletionHandler)(NSUInteger numberOfExperienceCategories);
 
+
+@class L;
+
 @interface WTAugmentedRealityExperiencesManager (ExampleSections)
 
 - (void)loadARExperience:(WTAugmentedRealityExperiencesLoadCompletionHandler)completionHandler scanCameraPositionBack:(BOOL)campos;

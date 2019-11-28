@@ -42,8 +42,7 @@ var Tracker = {
                 if (!SceneBuilder.snapped) {
                     NativeBridge.sendExperiencePlayStart(SceneBuilder.experience_id);
                     Videos.resumeAfterPause();
-                    Sounds.playOrResumeAutoSound();
-                    Sounds.playManualSoundAndPauseOthers(soundManualCurrent, false);
+                    Sounds.resumeAfterPause();
                     animator.continueAnimation();
                     PlaceHolder.onComplete();
                     uiUtil.flipScreenHidden();

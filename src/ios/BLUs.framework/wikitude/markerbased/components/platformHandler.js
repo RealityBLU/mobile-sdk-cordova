@@ -40,39 +40,10 @@ var PlatformHandler = {
         let platform = PlatformHandler.platformString();
         if (platform === "unknown") return;
         if (platform === "ios") {
-            let iosBundleRegEx = new RegExp("^file:\/\/\/private\/var\/containers\/Bundle\/Application\/.+?(?=\/)\/.+?(?=\/)\/");
-            return location.href.match(iosBundleRegEx);
+            let iosBundleRegEx = new RegExp("file:\/\/\/*((private)|())\/var\/containers\/Bundle\/Application\/.+?(?=\/)\/.+?(?=\/)");
+            return location.href.match(iosBundleRegEx)[0];
         } else {
-            return "assets/android_asset/customization";
+            return "assets/android_asset";
         }
     },
 };
-let jsonImage = {};
-
-function sendSpinnerFrames() {
-    let currentFrames = jsonImage.markerbased !== undefined ? jsonImage.markerbased["loading-spinner-frames"] : 48;
-    let spinnerFrames = [];
-    if (currentFrames) {
-        for (let i = 0; i < currentFrames; i++) {
-            spinnerFrames.push(i);
-        }
-        return spinnerFrames;
-    }
-}
-
-function sendLoadingSpinner() {
-    if (jsonImage.markerbased !== undefined && jsonImage.markerbased["loading-spinner"]) return PlatformHandler.applicationDirectoryPath() + '/markerbased' + jsonImage.markerbased["loading-spinner"];
-    else return "assets/img/spinner_sprite.png";
-}
-
-function customizationIcons() {
-    if (jsonImage.markerbased !== undefined && jsonImage.markerbased["scanning-spinner"]) document.getElementById('loading_image').src = PlatformHandler.applicationDirectoryPath() + '/markerbased' + jsonImage.markerbased["scanning-spinner"];
-    if (jsonImage.markerbased !== undefined && jsonImage.markerbased["scanning-spinner-text-svg"]) document.getElementsByClassName('scanning-text-container').src = PlatformHandler.applicationDirectoryPath() + '/markerbased' + jsonImage.markerbased["scanning-spinner-text-svg"];
-    if (jsonImage.markerbased !== undefined && jsonImage.markerbased["camera-switch"]) document.getElementsByClassName('flip-camera-button').src = PlatformHandler.applicationDirectoryPath() + '/markerbased' + jsonImage.markerbased["camera-switch"];
-    if (jsonImage.markerbased !== undefined && jsonImage.markerbased["lock-screen-on"]) document.getElementById('lock-camera-button-container').src = PlatformHandler.applicationDirectoryPath() + '/markerbased' + jsonImage.markerbased["lock-screen-on"];
-    if (jsonImage.markerbased !== undefined && jsonImage.markerbased["lock-screen-off"]) document.getElementById('unlock-camera-button-container').src = PlatformHandler.applicationDirectoryPath() + '/markerbased' + jsonImage.markerbased["lock-screen-off"];
-    if (jsonImage.markerbased !== undefined && jsonImage.markerbased["qr-button"]) document.getElementById('tracking-qr-scan-button-container').src = PlatformHandler.applicationDirectoryPath() + '/markerbased' + jsonImage.markerbased["qr-button"];
-    if (jsonImage.common !== undefined && jsonImage.common["back-button"]) document.getElementById('tracking-model-back-button-container').src = PlatformHandler.applicationDirectoryPath() + '/common' + jsonImage.common["back-button"];
-    if (jsonImage.common !== undefined && jsonImage.common['flight-off']) document.getElementById('flightOff-button-container').src = PlatformHandler.applicationDirectoryPath() + '/common' + jsonImage.common['flight-off'];
-    if (jsonImage.common !== undefined && jsonImage.common['flight-on']) document.getElementById('flightOn-button-container').src = PlatformHandler.applicationDirectoryPath() + '/common' + jsonImage.common['flight-on'];
-}

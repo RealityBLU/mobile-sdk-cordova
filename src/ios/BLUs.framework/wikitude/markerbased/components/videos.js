@@ -115,9 +115,9 @@ var Videos = {
                 NativeBridge.tellNativeToDownloadPersonalVideo(personalVideos);
             }
         }
-        if (autoVideosOnSceneStarted === 0 && autoVideosOnScene === 0) {
-            SceneBuilder.displaySceneData();
-        }
+        // if (autoVideosOnSceneStarted === 0 && autoVideosOnScene === 0) {
+        //     SceneBuilder.displaySceneData();
+        // }
     },
 
     preparePersonalVideoForDownload: function (v) {

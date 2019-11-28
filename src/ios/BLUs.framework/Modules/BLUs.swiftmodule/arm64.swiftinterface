@@ -152,6 +152,14 @@ public struct ARContact {
   public var email: Swift.String?
   public var emailType: Swift.String?
 }
+@objc public class L : ObjectiveC.NSObject {
+  @objc public class func error(message: Swift.String)
+  @objc public class func info(message: Swift.String)
+  @objc public class func warning(message: Swift.String)
+  @objc public class func debug(message: Swift.String)
+  @objc override dynamic public init()
+  @objc deinit
+}
 @objc public class DebugTools : ObjectiveC.NSObject {
   public static func setEnvironmentType(environmentType: BLUs.APIHandler?)
   public static func mock()

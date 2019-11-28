@@ -6,15 +6,15 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		6qV60FBRMQlAjo/N6WFfpSHu6BA=
+		t8FkZpn1XVWQNSL2vm2QCVqOC/M=
 		</data>
 		<key>BLUControllers.storyboardc/3ia-97-pCv-view-5Be-Du-UlF.nib/objects-13.0+.nib</key>
 		<data>
-		+/aqwHv/I73WJc4RVjTLbK0C5RU=
+		fADyQG0y7gckDdmgOVTcSn6o1FI=
 		</data>
 		<key>BLUControllers.storyboardc/3ia-97-pCv-view-5Be-Du-UlF.nib/runtime.nib</key>
 		<data>
-		jHHmCYQhrlnc63SKnCI24/5shWQ=
+		Z1LPjy3VLYIAojlPSmlN/NCeHn0=
 		</data>
 		<key>BLUControllers.storyboardc/Info.plist</key>
 		<data>
@@ -22,27 +22,27 @@
 		</data>
 		<key>BLUControllers.storyboardc/arController.nib/objects-13.0+.nib</key>
 		<data>
-		3cQFQKDEHR+8kcos4qKd7/WyFA8=
+		+0Q4e423Uj982OPArV0tul9635I=
 		</data>
 		<key>BLUControllers.storyboardc/arController.nib/runtime.nib</key>
 		<data>
-		viVC/eVnKPx5d9/ccynVJF8RLCE=
+		mGu+WUoKHcpDgE9cqRnAvwOurHQ=
 		</data>
 		<key>BLUControllers.storyboardc/qrController.nib/objects-13.0+.nib</key>
 		<data>
-		17G0sjWJIgJBMLpKA620hnxbzU8=
+		gj5zCQFsJzNlvWFB/fZKOckL1zY=
 		</data>
 		<key>BLUControllers.storyboardc/qrController.nib/runtime.nib</key>
 		<data>
-		qFEZLayaNjZi7o4mHNI6owH3Yig=
+		Gut9Ep6ROWIWU6uBk0SPzci08Do=
 		</data>
 		<key>BLUControllers.storyboardc/rIt-Bp-PPM-view-G9g-Dh-lay.nib/objects-13.0+.nib</key>
 		<data>
-		ana5lCaMWeljmKi77hzPTcBYfXo=
+		ZtFc+WrQo37ZZM375zvzpF2hAcw=
 		</data>
 		<key>BLUControllers.storyboardc/rIt-Bp-PPM-view-G9g-Dh-lay.nib/runtime.nib</key>
 		<data>
-		Bimms6YRTW9JMtdlq2gq/m16jps=
+		wapY2IlYC52yGMPa8DdyJT2l4SY=
 		</data>
 		<key>GoogleService-Info.plist</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Headers/BLUs-Swift.h</key>
 		<data>
-		yLYhNq69Q/WBIJaBE+HFYUzrA/Y=
+		tBPeNyzIS25TpVlqIG5RLig+8Qw=
 		</data>
 		<key>Headers/BLUs.h</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>Headers/WTAugmentedRealityExperiencesManager+ExampleSections.h</key>
 		<data>
-		kTEFHHzFs8dp3089TLHGHIMVenw=
+		EyA8bCja9Vk8y9LcafqdJvz/eUc=
 		</data>
 		<key>Headers/WTAugmentedRealityExperiencesManager.h</key>
 		<data>
@@ -74,11 +74,11 @@
 		</data>
 		<key>Headers/WTAugmentedRealityViewController.h</key>
 		<data>
-		OHN0ZcDRMt2sMfBgpGspRlpYoYo=
+		Edqj8SxW5uJtcl7to+FBbcHCVkA=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		VUp6CLoCLtCeUiIMS2Mtygeht/s=
+		U/ZBaSyZFoqrUdhl2q+kMkmI4xk=
 		</data>
 		<key>Modules/BLUs.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
@@ -86,11 +86,11 @@
 		</data>
 		<key>Modules/BLUs.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		UOypuRgMvoMilz9N4fc8VawWwb4=
+		Rv5W+nLC4QKKdsKpFkf7/Unpvpk=
 		</data>
 		<key>Modules/BLUs.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		/O1w+oTMwDCkE7Vtez95PZLpw0Y=
+		6BoBocpi1uSjdSd6QERwlvY+Hck=
 		</data>
 		<key>Modules/BLUs.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -98,11 +98,11 @@
 		</data>
 		<key>Modules/BLUs.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		UOypuRgMvoMilz9N4fc8VawWwb4=
+		Rv5W+nLC4QKKdsKpFkf7/Unpvpk=
 		</data>
 		<key>Modules/BLUs.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		/O1w+oTMwDCkE7Vtez95PZLpw0Y=
+		6BoBocpi1uSjdSd6QERwlvY+Hck=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -1870,11 +1870,15 @@
 		</data>
 		<key>wikitude/markerbased/components/animations.js</key>
 		<data>
-		2wK+EVtUPITV/pfte1WUwlV/iic=
+		+jWZXsB+t1L5/bngPtixsnMHpjc=
 		</data>
 		<key>wikitude/markerbased/components/buttons.js</key>
 		<data>
 		J/3iNnhu23JxEcy+MsZrjgpbuhE=
+		</data>
+		<key>wikitude/markerbased/components/fileUtil.js</key>
+		<data>
+		1Uao5zMvVSMRcRTp2nBjK9CyM/I=
 		</data>
 		<key>wikitude/markerbased/components/images.js</key>
 		<data>
@@ -1882,7 +1886,7 @@
 		</data>
 		<key>wikitude/markerbased/components/main.js</key>
 		<data>
-		75rQxToillfzFbkwQVpmUUTbQcQ=
+		Y5K+tfgLVaigeym1LpL5gHbwWt4=
 		</data>
 		<key>wikitude/markerbased/components/math.js</key>
 		<data>
@@ -1894,15 +1898,15 @@
 		</data>
 		<key>wikitude/markerbased/components/nativeBridge.js</key>
 		<data>
-		mIcrognPtPbEnnjzTIiywNrK1/A=
+		4s5kbvG1DyMohs8lWM+EdiZcqpc=
 		</data>
 		<key>wikitude/markerbased/components/placeHolder.js</key>
 		<data>
-		eCDyi1ZNeGeIWiUa0+02JbEDr3Q=
+		9gCtMihY/xzH6Rs4vAIw21HQPe0=
 		</data>
 		<key>wikitude/markerbased/components/platformHandler.js</key>
 		<data>
-		Yy7tAfDaLMngo4+4L0EOdeawCaE=
+		9OkkUKqLj6x5f3+QztTYvJwj0Vc=
 		</data>
 		<key>wikitude/markerbased/components/sceneBuilder.js</key>
 		<data>
@@ -1914,7 +1918,7 @@
 		</data>
 		<key>wikitude/markerbased/components/sounds.js</key>
 		<data>
-		i2d2wSwCQL6lx1AlZWgD3mXn9hQ=
+		2evwKwWtRhmqEUwCCUHV4h14YKg=
 		</data>
 		<key>wikitude/markerbased/components/textUtils.js</key>
 		<data>
@@ -1922,15 +1926,15 @@
 		</data>
 		<key>wikitude/markerbased/components/tracker.js</key>
 		<data>
-		PU0/Uy58ZHFaaFbY0X20LpJxxOg=
+		yFbGs5eQ0nHJBcYGeunPWWcQ5mw=
 		</data>
 		<key>wikitude/markerbased/components/uiUtil.js</key>
 		<data>
-		XdKxr54O4exmluJ0Xx/kK8N8x5M=
+		KKOh6de9MBxIQxWBN/ZCb5fty0k=
 		</data>
 		<key>wikitude/markerbased/components/videos.js</key>
 		<data>
-		kfkY2gLukjRie4rFwW+VstC6298=
+		XydQM1zo/pdLEMhnmKWVF8ZvUZ0=
 		</data>
 		<key>wikitude/markerbased/helpers/constants.js</key>
 		<data>
@@ -1954,7 +1958,7 @@
 		</data>
 		<key>wikitude/markerbased/index.html</key>
 		<data>
-		p1o7pBNu5VssTZYnOum+/Sjvj0M=
+		kSm3nu/M58fQ6aJLGMoqLld4iFo=
 		</data>
 		<key>wikitude/markerbased/styles/default.css</key>
 		<data>
@@ -2027,21 +2031,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			nzF91CXzfkyaWs5/iBoovG6CBtG8F5gJov3gfoUKKEE=
+			1ctnvcj8Rv1q82zUgpIqBZwF7Ufgo6PlPbpKlutZECQ=
 			</data>
 		</dict>
 		<key>BLUControllers.storyboardc/3ia-97-pCv-view-5Be-Du-UlF.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			48KN62/dquWu5HVKGhTZRGflQyQfKgrS570Sphm3y6k=
+			gJjW4C9fk7fIbw6+EW2nzm1vtF9WfHFTVs/7+aEf+JE=
 			</data>
 		</dict>
 		<key>BLUControllers.storyboardc/3ia-97-pCv-view-5Be-Du-UlF.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/C2de0LCZT4GsWi3Y8lTelz+VwXC7+TnOLuuUDauyjk=
+			mTd822jBtfu/6XTL+kDSnPttEBJ6DLQ4bGucFjn/CA0=
 			</data>
 		</dict>
 		<key>BLUControllers.storyboardc/Info.plist</key>
@@ -2055,42 +2059,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			geqM12nyy+9w9WXedtR/FB4sMEPUX+I9uDuywK0D1Kg=
+			0ux160SUMqQagcxljH4lq/Hsmm2fqExNMs1gsV6xyIE=
 			</data>
 		</dict>
 		<key>BLUControllers.storyboardc/arController.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4AGm/lee73p+862qN4UWClonUsc5R8jWWnT+JblhuiU=
+			/Bnfe3+xKEqmvhQpdW0eyh3CE0reQJryxCTm6mnaMQQ=
 			</data>
 		</dict>
 		<key>BLUControllers.storyboardc/qrController.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			HPpUP1vENNnZzTY8noNprj8SQ1fX8PQ9bQhKVc0AfsA=
+			r0KlGeIXdsQXQHMbWCEUN3HP15gwuuzQLus3C1qYsR4=
 			</data>
 		</dict>
 		<key>BLUControllers.storyboardc/qrController.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dEd+o6eEMKZrNqWl4w2msUv4UZI6fgepWr0UIExCalQ=
+			0Hj72izhCQKuQrUORfLxAXAXF9ULDDRiiY0t45jtulY=
 			</data>
 		</dict>
 		<key>BLUControllers.storyboardc/rIt-Bp-PPM-view-G9g-Dh-lay.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			RNpQnRVPnSc2VotOVLQFlQc5pY/R4nl4BgzwMVCv/mE=
+			d7fVR3DXtjD6kyuEHkz7SMneBqP5u/xolONBJpw4yBU=
 			</data>
 		</dict>
 		<key>BLUControllers.storyboardc/rIt-Bp-PPM-view-G9g-Dh-lay.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Kytju+Bv/TZ089cnlQYbmP43JnG1HTo67S3/anvc4KY=
+			Jn9jzX24XpeFQmgXJtYjK7426KAcmR/ILi5oM4kQJQg=
 			</data>
 		</dict>
 		<key>GoogleService-Info.plist</key>
@@ -2104,7 +2108,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dQFOQcRJfxAcuVc/Fm0Yn1ArIujElGKUhXqvFb83xdY=
+			J1ijr2eGXOiLV4rlEbZYiFOlRtq+rMFzEUdd8ykQokU=
 			</data>
 		</dict>
 		<key>Headers/BLUs.h</key>
@@ -2125,7 +2129,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			WQLwmwbKOqIiI0zmEwz2Fly6f/iN8iYREZ/xQIGAr60=
+			PJ7OA63/dAvi3Yx3h5SN9GvUTU3UQZypwdqXvMPoDfo=
 			</data>
 		</dict>
 		<key>Headers/WTAugmentedRealityExperiencesManager.h</key>
@@ -2146,7 +2150,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			GzENfSPuYNsX+na4va1rq9DkeuG1kWUlIcplbX7vrlY=
+			lHVsObPV+sz8V+Xi/x0VhWCMA/VIG9/56qH99hs0jVM=
 			</data>
 		</dict>
 		<key>Modules/BLUs.swiftmodule/arm64-apple-ios.swiftdoc</key>
@@ -2160,14 +2164,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			AX0nXZM1COdi6yGE+FbC3O5WxCrN5X164tr255qu0rU=
+			WSSioCbt+6y6gkowCaLeo5A3YLBQBtA8Q9VKXxtYoQQ=
 			</data>
 		</dict>
 		<key>Modules/BLUs.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			sd4kQF8ukSXp79obsdkVU4RdR/PLK8QCntoEmcW61Uo=
+			bStoosleneSc55a2a0DbYAqV1BRCqgHwUp356jJ25Ws=
 			</data>
 		</dict>
 		<key>Modules/BLUs.swiftmodule/arm64.swiftdoc</key>
@@ -2181,14 +2185,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			AX0nXZM1COdi6yGE+FbC3O5WxCrN5X164tr255qu0rU=
+			WSSioCbt+6y6gkowCaLeo5A3YLBQBtA8Q9VKXxtYoQQ=
 			</data>
 		</dict>
 		<key>Modules/BLUs.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			sd4kQF8ukSXp79obsdkVU4RdR/PLK8QCntoEmcW61Uo=
+			bStoosleneSc55a2a0DbYAqV1BRCqgHwUp356jJ25Ws=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -5282,7 +5286,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			4QhpQUHWJLX+9tgO0Er1SVY6zUsOPsWl8KBxTBqXFoQ=
+			b4G93tbzXeZOkFGCEOH5DPNw4V2MUPkginwLWVl/lqU=
 			</data>
 		</dict>
 		<key>wikitude/markerbased/components/buttons.js</key>
@@ -5290,6 +5294,13 @@
 			<key>hash2</key>
 			<data>
 			4f2sUhXzNW9dEshs+MSzqcNXj/crrM/mnsbq3adOHbw=
+			</data>
+		</dict>
+		<key>wikitude/markerbased/components/fileUtil.js</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			zyVJLg2UV6eY6D1GcltTWnKA0AXkaqXAHnmZka26daU=
 			</data>
 		</dict>
 		<key>wikitude/markerbased/components/images.js</key>
@@ -5303,7 +5314,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			NzqQEFC6OuUMTkKt/pFpYSZwYKLwIwKU1G7kBhYOmOo=
+			vsxp/Ospi/yFZjqKtljkLCfQ/QUiuLXrRG1Tzf+6uSk=
 			</data>
 		</dict>
 		<key>wikitude/markerbased/components/math.js</key>
@@ -5324,21 +5335,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			PzfBgxmX4M3ODql3GTJlSInTreHYVJPkB+oC17J2yjI=
+			B8/gf+D6M2YZcqYLjqtQuaUNNuG4q70iuQz1SRqaeM8=
 			</data>
 		</dict>
 		<key>wikitude/markerbased/components/placeHolder.js</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			JGArI7lw9dqK1nK1k+tX1mvXTPJcvOxtnYgiaWWyYOc=
+			Dp9mJvLSOh2XdDkAGxVy4IHBDxzANmm5MTYzulDqxR8=
 			</data>
 		</dict>
 		<key>wikitude/markerbased/components/platformHandler.js</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dMmgHI5mmhnT799n+vqFnfbWVXXPUHung0K1/MJhQ8A=
+			/akjuL4DtCaTYMBAwBbAh38mdJyEH+3wHWVsqUC/kGU=
 			</data>
 		</dict>
 		<key>wikitude/markerbased/components/sceneBuilder.js</key>
@@ -5359,7 +5370,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			foajtQzDmqaeYJK2NGuCrypQtSMMd/SLBksVb3H4r2g=
+			Da0mQjxfAF93TsntLhi464TAlVcChZ1rkq4ucUD4SAk=
 			</data>
 		</dict>
 		<key>wikitude/markerbased/components/textUtils.js</key>
@@ -5373,21 +5384,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			FDHvdFm5cR3PkRfofl7oaOC/qNUqXkanRr3Jyp9vxG4=
+			ORda/vXEbYO2zmiC+ljbiiqg2ZO+jG/vc/rFLWdLrL4=
 			</data>
 		</dict>
 		<key>wikitude/markerbased/components/uiUtil.js</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			AYglP7GXlSzYlPJFWtfz7Hfsz0tAaRdgjEMxuprm1aM=
+			vj5g0osaUGzQlb2fPNkbJ8M8DXJU48hHV7pQMLGygo4=
 			</data>
 		</dict>
 		<key>wikitude/markerbased/components/videos.js</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			0ynapfSvZmO+UL/OgNtaj444p8rOokwxMvLwdZ13BBk=
+			6P/PBbt5pf5nqrQIxotnylLPrIdDvAbtUPGIi2LheDI=
 			</data>
 		</dict>
 		<key>wikitude/markerbased/helpers/constants.js</key>
@@ -5429,7 +5440,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			EYM2qn5MtiPvx9gdLdMjZafV1A0stNqsw9SskyHkF8M=
+			UDi182xTXzueEKu9w7Jdk4n8i5IJx0xKJ90a9hnJPUk=
 			</data>
 		</dict>
 		<key>wikitude/markerbased/styles/default.css</key>
