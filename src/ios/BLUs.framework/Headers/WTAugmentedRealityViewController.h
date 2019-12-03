@@ -2,7 +2,6 @@
 #import <WikitudeSDK/WikitudeSDK.h>
 
 
-
 @interface WTAugmentedRealityViewController : UIViewController <WTArchitectViewDelegate, UIGestureRecognizerDelegate>
 
 @property (nonatomic, weak) IBOutlet WTArchitectView *architectView;

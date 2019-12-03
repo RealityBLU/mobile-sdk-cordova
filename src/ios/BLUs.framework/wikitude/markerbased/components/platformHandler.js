@@ -43,7 +43,7 @@ var PlatformHandler = {
             let iosBundleRegEx = new RegExp("file:\/\/\/*((private)|())\/var\/containers\/Bundle\/Application\/.+?(?=\/)\/.+?(?=\/)");
             return location.href.match(iosBundleRegEx)[0];
         } else {
-            return "assets/android_asset";
+            return "file:///android_asset";
         }
     },
 };

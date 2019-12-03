@@ -158,7 +158,6 @@ var SceneBuilder = {
             }
         }
         animator.autoPlayOnStart();
-        uiUtil.setDisabledLock(false);
     },
     getDataOldApproach: function (response) {
         let markerJson = SceneBuilder.chooseLocationBasedJson(response.metadata);
@@ -330,8 +329,8 @@ var SceneBuilder = {
             SceneBuilder.isMediaLoaded = true;
             Videos.autoVideos();
             Sounds.autoSounds();
-        } else {
         }
+        uiUtil.setDisabledLock(false);
     },
     stopStreamingDrawables() {
         Videos.pauseAllVideos();

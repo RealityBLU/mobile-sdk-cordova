@@ -18,6 +18,12 @@ import SafariServices
 import Swift
 import SystemConfiguration
 import UIKit
+@objc public class PlistManager : ObjectiveC.NSObject {
+  public static var plistFileName: Swift.String?
+  @objc public class func hasProperty(property: Swift.String) -> Swift.Bool
+  @objc override dynamic public init()
+  @objc deinit
+}
 public protocol APIHandler {
   mutating func endUserLoginEndPoint() -> Swift.String
   mutating func endUserEmailPass() -> Swift.String

@@ -240,6 +240,13 @@ SWIFT_CLASS("_TtC4BLUs27MarkerbasedDownloadUtililty")
 
 
 
+
+SWIFT_CLASS("_TtC4BLUs12PlistManager")
+@interface PlistManager : NSObject
++ (BOOL)hasPropertyWithProperty:(NSString * _Nonnull)property SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class WTAugmentedRealityExperience;
 
 SWIFT_CLASS("_TtC4BLUs19SwiftFromObjCBridge")
