@@ -65,7 +65,6 @@
         <framework src="src/ios/WikitudeSDK.framework" embed="true" custom="true" />
         <resource-file src="BLUcustomization" target="BLUcustomization" />
         <pods-config ios-min-version="11.1" use-frameworks="true"></pods-config>
-        <!-- <pod name="Alamofire" version="4.8.0" /> -->
         <pod name="FirebaseCore" version="6.3.3" />
         <pod name="FirebaseAnalytics" version="6.1.5" />
     </platform>
