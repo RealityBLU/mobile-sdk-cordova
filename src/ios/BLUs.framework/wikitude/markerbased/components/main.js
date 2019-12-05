@@ -68,7 +68,7 @@ const World = {
         HardwareHelper.addRotateScreenListener();
         World.setupServerLocation();
         NativeBridge.requestClientDataFromNative();
-        customizationIcons();
+        uiCustomization.customize();
     },
 
     setupServerLocation: function () {

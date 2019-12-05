@@ -55,10 +55,10 @@ var NativeBridge = {
     onFilesLoadingComplete: function () { //called from native code
         isDownloading = false;
         if (cachedItemsCount === objectsToDownload) { //if we have all files cached, don't use timer before showing scene
-            SceneBuilder.snapped ? SceneBuilder.displaySceneData() : SceneBuilder.startStreamingDrawables();
+            SceneBuilder.startStreamingDrawables();
         } else {
             setTimeout(function () {
-                SceneBuilder.snapped ? SceneBuilder.displaySceneData() : SceneBuilder.startStreamingDrawables();
+                SceneBuilder.startStreamingDrawables();
             }, progressBarAnimationDuration);
         }
     },

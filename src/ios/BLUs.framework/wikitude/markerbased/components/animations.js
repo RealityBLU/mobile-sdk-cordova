@@ -16,11 +16,9 @@ function AnimationSkeletal(idModel, nameAnimation, isAuto) {
 }
 
 function Animator() {
-    var isLastAnimationFinished = false;
     let isInit = false;
     let objectList = new Map(); // Key is source of animation (model3d, button, toggle and etc),
                                 // Value is AnimationSkeletal object
-    let modelList = new Map(); //for last animation (in future we can pause last animation of model before start new animation)
 
     this.addAnimatedObject = function (objectSource, animationSkeletal) {
         if (TextUtils.isEmpty(animationSkeletal.nameAnimation)) return;
@@ -28,7 +26,6 @@ function Animator() {
     };
     this.cleanAnimatedObjects = function () {
         objectList = new Map();
-        modelList = new Map();
         isInit = false;
     };
     this.createAnimation = function (keyObject, valueObject, model3d, animator) {
@@ -38,12 +35,15 @@ function Animator() {
                 },
                 onFinish: function () {
                     if (model3d.countPlayback !== -1) {
-                        animator.pauseAnimation(keyObject);
-                        isLastAnimationFinished = true
+                        this.isPlaying = false;
+                        this.isAnimationStarted = false;
+                        this.anim.isSuspended = false;
+                        this.pause();
                     }
                 }
             });
         anim.isPlaying = false;
+        anim.isSuspended = false;
         anim.isAnimationStarted = false;
         return anim;
     };
@@ -52,16 +52,19 @@ function Animator() {
         let valueObject = value;
         let isObjectModel = valueObject.idModel < 0;
         let isAnimationStarted = false;
-        let isPlaying= false;
+        let isPlaying = false;
+        let isSuspended = false;
         try {
             isAnimationStarted = valueObject.animationOfModel3d.isAnimationStarted;
-            isPlaying= valueObject.animationOfModel3d.isPlaying;
+            isPlaying = valueObject.animationOfModel3d.isPlaying;
+            isSuspended = valueObject.animationOfModel3d.isSuspended;
         } catch (e) {}
         if (isObjectModel) {
             valueObject.animationOfModel3d = this.createAnimation(keyObject, valueObject, keyObject, this);
             valueObject.model3d = keyObject;
             valueObject.animationOfModel3d.isPlaying = isAnimationStarted;
             valueObject.animationOfModel3d.isAnimationStarted = isPlaying;
+            valueObject.animationOfModel3d.isSuspended = isSuspended;
         } else {
             let list3dmodel = map.list3dModel;
             for (let m = 0; m < list3dmodel.length; m++) {
@@ -72,6 +75,7 @@ function Animator() {
                         valueObject.model3d = model3d;
                         valueObject.animationOfModel3d.isPlaying = isAnimationStarted;
                         valueObject.animationOfModel3d.isAnimationStarted = isPlaying;
+                        valueObject.animationOfModel3d.isSuspended = isSuspended;
                     }
                     break;
                 }
@@ -79,7 +83,6 @@ function Animator() {
         }
     };
     this.parseAnimations = function (modelList) {
-        if (isLastAnimationFinished) return;
         objectList.list3dModel = modelList;
         for (let [key, value] of objectList.entries()) {
             this.fillItem(key, value, objectList);
@@ -87,29 +90,6 @@ function Animator() {
         objectList.list3dModel = null;
         isInit = true;
     };
-
-    // state handler part
-    function saveLastAnimationOfModel(model3d, animation) {
-        modelList.set(model3d, animation);
-    }
-
-    function getLastAnimationOfModel(model3d) {
-        return modelList.get(model3d);
-    }
-
-    function pauseLastAnimationOfModel(model3d) {
-        let lastAnimation = getLastAnimationOfModel(model3d);
-        let isUndefined = TextUtils.isUndefined(lastAnimation);
-        if (!isUndefined) {
-            lastAnimation.isPlaying = false;
-            lastAnimation.pause();
-        }
-    }
-
-    function handleAction(animationSkeletal) {
-        pauseLastAnimationOfModel(animationSkeletal.model3d);
-        saveLastAnimationOfModel(animationSkeletal.model3d, animationSkeletal.animationOfModel3d)
-    }
 
     // media controller part
     this.continueAnimation = function () {
@@ -123,7 +103,6 @@ function Animator() {
     };
     this.autoPlayOnStart = function () {
         objectList.forEach((animationSkeletal, key) => {
-            if (isLastAnimationFinished) return;
             if (animationSkeletal.isAuto) {
                 this.playAutoAnimation(key);
             }
@@ -133,34 +112,38 @@ function Animator() {
         let animationSkeletal = objectList.get(object);
         let animation = animationSkeletal.animationOfModel3d;
         if (TextUtils.isEmpty(animation)) return;
-        handleAction(animationSkeletal);
         if (animation.isAnimationStarted) animation.resume();
         else animation.start(animationSkeletal.model3d.countPlayback);
         animation.isPlaying = true;
+        animation.isSuspended = false;
         animation.isAnimationStarted = true;
     };
-    this.pauseAnimation = function (object) {
+    this.pauseAnimation = function (object, suspended) {
         let animationSkeletal = objectList.get(object);
+        if (TextUtils.isEmpty(animationSkeletal)) return;
         let animation = animationSkeletal.animationOfModel3d;
         if (TextUtils.isEmpty(animation)) return;
-        handleAction(animationSkeletal);
-        animation.isPlaying = false;
         animation.pause();
+        animation.isPlaying = false;
+        if (suspended) animation.isSuspended = true;
+    };
+    this.resumeAnimation = function (object) {
+        let animationSkeletal = objectList.get(object);
+        if (TextUtils.isEmpty(animationSkeletal)) return;
+        let animation = animationSkeletal.animationOfModel3d;
+        if (TextUtils.isEmpty(animation)) return;
+        if (animation.isAnimationStarted && animation.isSuspended) {
+            animation.resume();
+            animation.isPlaying = true;
+            animation.isSuspended = false;
+            animation.isAnimationStarted = true;
+        }
     };
     this.toggleAnimation = function (object) {
         let animationSkeletal = objectList.get(object);
         if (TextUtils.isEmpty(animationSkeletal)) return;
         let animation = animationSkeletal.animationOfModel3d;
         if (TextUtils.isEmpty(animation)) return;
-        let lastAnimation = getLastAnimationOfModel(animationSkeletal.model3d);
-        let isSame = Object.is(lastAnimation, animation);
-        if (!isSame) {
-            let isUndefined = TextUtils.isUndefined(lastAnimation);
-            if (!isUndefined) {
-                lastAnimation.isPlaying = false;
-                lastAnimation.pause();
-            }
-        }
         AnalyticsPart.sendAnimationEvent(animationSkeletal);
         if (animation.isPlaying) {
             animation.isPlaying = false;
@@ -171,21 +154,21 @@ function Animator() {
             animation.isPlaying = true;
             animation.isAnimationStarted = true;
         }
-        saveLastAnimationOfModel(animationSkeletal.model3d, animation);
+        animation.isSuspended = false;
     };
 
     this.resumeAfterPause = function () {
-        objectList.forEach((animationSkeletal) => {
-            if (!TextUtils.isEmpty(animationSkeletal.animationOfModel3d) && animationSkeletal.animationOfModel3d.isPlaying) {
-                animationSkeletal.animationOfModel3d.resume();
+        objectList.forEach((animationSkeletal, key) => {
+            if (!TextUtils.isEmpty(animationSkeletal.animationOfModel3d)) {
+                this.resumeAnimation(key);
             }
         });
     };
 
     this.pauseAllAnimations = function () {
-        objectList.forEach((animationSkeletal) => {
+        objectList.forEach((animationSkeletal, key) => {
             if (!TextUtils.isEmpty(animationSkeletal.animationOfModel3d) && animationSkeletal.animationOfModel3d.isPlaying) {
-                this.pauseAnimation(animationSkeletal.animationOfModel3d);
+                this.pauseAnimation(key, true);
             }
         });
     };

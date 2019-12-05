@@ -9,6 +9,7 @@ function addToQueue(simpleAlert) {
 }
 
 function nextAlert() {
+    let i = queueAlert.shift();
     if (queueAlert.length > 0) {
         showAlert(queueAlert[0]);
     }

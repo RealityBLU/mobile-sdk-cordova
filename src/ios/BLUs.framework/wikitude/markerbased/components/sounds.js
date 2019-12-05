@@ -27,25 +27,27 @@ var Sounds = {
                 isPausedAudioFound = true;
             }
         }
-        if (!isPausedAudioFound) this.playOrResumeAutoSound();
+        if (!isPausedAudioFound && !isMarkerLost) this.playOrResumeAutoSound();
     },
 
     autoSounds: function () {
         if (soundsAutoRes.length > 0) {
             soundsAutoRes.forEach(sa => {
-                let asound = new AR.Sound(sa.url, {
-                    onLoaded: function () {
-                        asound.play(-1);
-                    },
-                    onError: function () {
-                    },
-                    onFinishedPlaying: function () {
-                    }
-                });
-                soundsAuto.set(sa.uniqueID, asound);
-                asound.uniqueID = sa.uniqueID;
-                asound.name = sa.name;
-                asound.load();
+                if (!soundsAuto.get(sa.uniqueID)) {
+                    let asound = new AR.Sound(sa.url, {
+                        onLoaded: function () {
+                            asound.play(-1);
+                        },
+                        onError: function () {
+                        },
+                        onFinishedPlaying: function () {
+                        }
+                    });
+                    soundsAuto.set(sa.uniqueID, asound);
+                    asound.uniqueID = sa.uniqueID;
+                    asound.name = sa.name;
+                    asound.load();
+                }
             })
         }
     },
@@ -75,29 +77,31 @@ var Sounds = {
 
     createManualSound: function (mSoundId) {
         if (soundsManualRes.has(mSoundId)) {
-            let si = soundsManualRes.get(mSoundId);
-            let msound = new AR.Sound(si.url, {
-                onLoaded: function () {
-                    msound.play();
-                    msound.isPlaying = true;
-                    soundManualCurrent = mSoundId;
-                },
-                onError: function () {
-                    World.arLog(">>>>>>  audio error " + mSoundId);
-                },
-                onFinishedPlaying: function () {
-                    msound.destroy();
-                    soundsManual.delete(mSoundId);
-                }
-            });
-            msound.isPaused = false;
-            msound.uniqueID = mSoundId;
-            msound.name = si.name;
-            AnalyticsPart.sendAudioEvent(msound);
-            msound.isPlaying = true;
-            msound.switchedManually = true;
-            soundsManual.set(mSoundId, msound);
-            msound.load();
+            if (!soundsManual.get(mSoundId)) {
+                let si = soundsManualRes.get(mSoundId);
+                let msound = new AR.Sound(si.url, {
+                    onLoaded: function () {
+                        msound.play();
+                        msound.isPlaying = true;
+                        soundManualCurrent = mSoundId;
+                    },
+                    onError: function () {
+                        World.arLog(">>>>>>  audio error " + mSoundId);
+                    },
+                    onFinishedPlaying: function () {
+                        msound.destroy();
+                        soundsManual.delete(mSoundId);
+                    }
+                });
+                msound.isPaused = false;
+                msound.uniqueID = mSoundId;
+                msound.name = si.name;
+                AnalyticsPart.sendAudioEvent(msound);
+                msound.isPlaying = true;
+                msound.switchedManually = true;
+                soundsManual.set(mSoundId, msound);
+                msound.load();
+            }
         }
     },
 

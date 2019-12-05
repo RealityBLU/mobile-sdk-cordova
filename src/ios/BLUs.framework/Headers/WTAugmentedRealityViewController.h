@@ -2,18 +2,10 @@
 #import <WikitudeSDK/WikitudeSDK.h>
 
 
-@class SwiftFromObjCBridge;
-@class DownloadUtil;
-@class BtnCalendarAction;
-@class WTAugmentedRealityExperience;
-
 @interface WTAugmentedRealityViewController : UIViewController <WTArchitectViewDelegate, UIGestureRecognizerDelegate>
 
 @property (nonatomic, weak) IBOutlet WTArchitectView *architectView;
 @property (nonatomic, assign) BOOL isProofing;
-
-- (void)sendPauseEvent;
-- (void)sendResumeEvent;
 
 - (void)onReceivedActionDismiss;
 - (void)onMarkerRecognized: (int) markerId;

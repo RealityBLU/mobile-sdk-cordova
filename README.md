@@ -85,3 +85,31 @@ blu.getMarkerlessExperiences(groupId, (experiences) => {
     // handle an error result
 });
 ```
+
+# Customization
+You can customize UI components such as images of scanning and icons of buttons by modifying a `customization.json` in the folder `BLUcustomization`. This folder is placed in the generated platform project.
+```
+cd platforms/ios/{PROJECT_NAME}/Resources/BLUcustomization // for iOS
+cd platforms/android/app/src/main/assets/BLUcustomization // for Android
+```
+Structure of the customization.json
+```json
+{
+    "markerbased": {
+        "scanning-spinner": "/markerbased/scanning-spinner.png",
+        "scanning-spinner-text-svg": "/markerbased/scanning-spinner.svg",
+        "loading-spinner": "/markerbased/loading-spinner.png",
+        "loading-spinner-frames": 48,
+        "camera-switch": "/markerbased/camera-switch.png",
+        "lock-screen-on": "/markerbased/lock-screen-on.png",
+        "lock-screen-off": "/markerbased/lock-screen-off.png",
+        "qr-button": "/markerbased/qr-button.png"
+    },
+    "common": {
+        "back-button": "/common/back-button.png",
+        "snapshot": "/common/snapshot.png",
+        "flight-off": "/common/flight-off.png",
+        "flight-on": "/common/flight-on.png"
+    }
+}
+```

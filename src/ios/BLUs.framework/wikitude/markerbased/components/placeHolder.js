@@ -25,9 +25,10 @@ const PlaceHolder = {
                 z: -90
             },
         });
-        let imageSpinner = new AR.ImageResource(sendLoadingSpinner());
+
+        let imageSpinner = new AR.ImageResource(uiCustomization.loadingSpinnerAssetPath || uiUtil.defaultLoadingSpinnerAssetPath);
         progressBarNew = new AR.AnimatedImageDrawable(imageSpinner, 1, 512, 512);
-        progressBarNew.animate(sendSpinnerFrames(), 40, -1);
+        progressBarNew.animate(uiCustomization.loadingSpinnerFrames || uiUtil.defaultLoadingSpinnerFrames(), 40, -1);
     },
 
     createPlaceHolder3D: function (m) {

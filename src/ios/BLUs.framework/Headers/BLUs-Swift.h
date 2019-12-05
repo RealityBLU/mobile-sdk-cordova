@@ -218,6 +218,16 @@ SWIFT_CLASS("_TtC4BLUs10DebugTools")
 
 
 
+SWIFT_CLASS("_TtC4BLUs1L")
+@interface L : NSObject
++ (void)errorWithMessage:(NSString * _Nonnull)message;
++ (void)infoWithMessage:(NSString * _Nonnull)message;
++ (void)warningWithMessage:(NSString * _Nonnull)message;
++ (void)debugWithMessage:(NSString * _Nonnull)message;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC4BLUs27MarkerbasedDownloadUtililty")
 @interface MarkerbasedDownloadUtililty : NSObject
 + (MarkerbasedDownloadUtililty * _Nonnull)sharedInstance SWIFT_WARN_UNUSED_RESULT;
@@ -229,6 +239,13 @@ SWIFT_CLASS("_TtC4BLUs27MarkerbasedDownloadUtililty")
 
 
 
+
+
+SWIFT_CLASS("_TtC4BLUs12PlistManager")
+@interface PlistManager : NSObject
++ (BOOL)hasPropertyWithProperty:(NSString * _Nonnull)property SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
 
 @class WTAugmentedRealityExperience;
 

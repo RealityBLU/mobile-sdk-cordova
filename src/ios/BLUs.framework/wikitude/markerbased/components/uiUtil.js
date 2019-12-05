@@ -14,8 +14,23 @@ const swiperContainer = document.querySelector('.swiper-container');
 const dropdownContent = document.querySelector('.dropdown_exp_list_content');
 const dropdownBtn = document.querySelector('.dropdown_exp_list_button');
 const poorConnection = document.getElementById("poor-connection-view");
+const scanningSpinner = document.getElementById("loading_image");
+const scanningSpinnerText = document.getElementsByClassName("scanning-text-container")[0];
+const cameraSwitch = document.getElementsByClassName("flip-camera-button")[1];
+const backBtn = document.getElementById("tracking-model-back-button-container");
+
 
 const uiUtil = {
+
+    defaultLoadingSpinnerAssetPath: "assets/img/spinner_sprite.png",
+    defaultSurfaceSpinnerSearchAssetPath: "assets/sprite_color.png",
+    defaultSurfaceSpinnerReadyAssetPath: "assets/sprite_white.png",
+
+    defaultLoadingSpinnerFrames: function () {
+        let frames = [];
+        for (let i = 0; i < 48; i++) frames.push(i);
+        return frames;
+    },
 
     invertToggleButton: function () {
         if (SceneBuilder.snapped) {
@@ -292,4 +307,111 @@ function checkFlight(check) {
         flightOffBtn.style.visibility = 'visible';
     }
     HardwareHelper.flashlight(check);
+
+    uiCustomization().loadingSpinnerAssetPath
+}
+
+
+
+const uiCustomization = {
+
+    customizationFolderName: "/BLUcustomization",
+
+    customizationJSON: null,
+
+    loadingSpinnerAssetPath: null,
+    loadingSpinnerFrames: null,
+
+    surfaceSpinnerSearch: null,
+    surfaceSpinnerReady: null,
+
+    init: async function () {
+        const filePath =
+            PlatformHandler.applicationDirectoryPath() +
+            this.customizationFolderName +
+            "/customization.json";
+
+        const fileData = await FileUtil.readTextFile(filePath);
+
+        if (fileData) this.customizationJSON = JSON.parse(fileData);
+    },
+
+    customize: async function () {
+        await this.init();
+
+        if (!this.customizationJSON) return;
+
+        const json = this.customizationJSON;
+
+        if (json.markerbased !== undefined) {
+            this.customizeElement(scanningSpinner, json.markerbased["scanning-spinner"]);
+            this.customizeElement(scanningSpinnerText, json.markerbased["scanning-spinner-text-svg"]);
+            this.customizeElement(cameraSwitch, json.markerbased["camera-switch"]);
+            this.customizeElement(lockCamera, json.markerbased["lock-screen-on"]);
+            this.customizeElement(unlockCamera, json.markerbased["lock-screen-off"]);
+            this.customizeElement(qrScanBtn, json.markerbased["qr-button"]);
+        }
+
+        if (json.common !== undefined) {
+            this.customizeElement(backBtn, json.common["back-button"]);
+            this.customizeElement(flightOffBtn, json.common["flight-off"]);
+            this.customizeElement(flightOnBtn, json.common["flight-on"]);
+            this.customizeElement(printScreenBtn, json.common["snapshot"]);
+        }
+
+        this.customizeLoadingSpinner();
+        // this.customizeSurfaceSpinner();
+    },
+
+    customizeElement: async function (element, resourcePath) {
+        if (!resourcePath) return;
+
+        const resourceAbsolutePath =
+            PlatformHandler.applicationDirectoryPath() +
+            this.customizationFolderName +
+            resourcePath;
+        if (await FileUtil.fileExist(resourceAbsolutePath)) {
+            element.src = resourceAbsolutePath;
+        }
+    },
+
+    customizeSurfaceSpinner: async function () {
+        if (!this.customizationJSON) return;
+
+        const json = this.customizationJSON;
+        if (json.markerless !== undefined) {
+            const surfaceSpinnerSearchPath =
+                PlatformHandler.applicationDirectoryPath() +
+                this.customizationFolderName +
+                json.markerless["surface-spinner-sprite-search"];
+            if (await FileUtil.fileExist(surfaceSpinnerSearchPath)) this.surfaceSpinnerSearch = surfaceSpinnerSearchPath;
+
+            const surfaceSpinnerReadyPath =
+                PlatformHandler.applicationDirectoryPath() +
+                this.customizationFolderName +
+                json.markerless["surface-spinner-sprite-ready"];
+            if (await FileUtil.fileExist(surfaceSpinnerReadyPath)) this.surfaceSpinnerReady = surfaceSpinnerReadyPath;
+        }
+    },
+
+    customizeLoadingSpinner: async function () {
+        if (!this.customizationJSON) return;
+
+        const json = this.customizationJSON;
+        if (json.markerbased !== undefined) {
+            const loadingSpinnerPath =
+                PlatformHandler.applicationDirectoryPath() +
+                this.customizationFolderName +
+                json.markerbased["loading-spinner"];
+            if (await FileUtil.fileExist(loadingSpinnerPath)) {
+                this.loadingSpinnerAssetPath = loadingSpinnerPath;
+
+                if (json.markerbased["loading-spinner-frames"]) {
+                    const loadingSpinnerFramesCount = json.markerbased["loading-spinner-frames"];
+                    this.loadingSpinnerFrames = [];
+                    for (let i = 0; i < loadingSpinnerFramesCount; i++) this.loadingSpinnerFrames.push(i);
+                }
+            }
+        }
+    }
 }
