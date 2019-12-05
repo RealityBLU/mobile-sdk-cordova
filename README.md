@@ -2,7 +2,7 @@
 
 ## 1. Add plugin to a project
 ```sh
-cordova plugin add https://github.com/RealityBLU/mobile-sdk-cordova.git#v1.1.0
+cordova plugin add https://github.com/RealityBLU/mobile-sdk-cordova.git#v1.2.0
 ```
 Important note!
 - The above command should be run for each new environment for set up all dependencies.
