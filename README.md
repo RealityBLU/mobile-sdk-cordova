@@ -1,9 +1,26 @@
+# Prerequisites
+
+- Android SDK installed on your development machine (Android development only)
+- Xcode installed on your development machine (iOS development only)
+- Cordova CLI installed via npm
+- Your personal trial license key from [License Page](https://www.realityblu.com/pricing/)
+- Your personal project ID which is registered in our system (Set it in your `config.xml` file)
+
+Note: This plugin requires a camera permission. For Android development you should request the `CAMERA` permission in your code (for example by [cordova-plugin-permission](https://www.npmjs.com/package/cordova-plugin-permission)).
+
+# Versions and Compatibility
+- Android SDK version 21+
+- iOS version 11.1+
+- Cordova version 9+
+
 # Setup plugin
 
 ## 1. Add plugin to a project
 ```sh
 cordova plugin add https://github.com/RealityBLU/mobile-sdk-cordova.git#v1.2.0
 ```
+It can takes some minutes because a plugin size is ~250MB.
+
 Important note!
 - The above command should be run for each new environment for set up all dependencies.
 ## 2. Add platform
@@ -113,3 +130,17 @@ Structure of the customization.json
     }
 }
 ```
+
+# Resolving issues
+
+**Error**: Failed to install 'cordova-plugin-blu-sdk': CordovaError: Version of installed plugin: "cordova-support-kotlin@1.1.0" does not satisfy dependency plugin requirement "cordova-support-kotlin@^1.2.0".
+
+**Reason**: Conflict of versions in the 3rd party plugin.
+
+**Solution**: Remove existing platforms and plugins folder then repeat setup plugin steps.
+___
+**Error**: npm ERR! 404 'cordova-plugin-blu-sdk' is not in the npm registry.
+
+**Reason**: Plugin hasn't a npm repository.
+
+**Solution**: Remove existing platforms and plugins folder then repeat setup plugin steps.
