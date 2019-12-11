@@ -171,8 +171,10 @@ ___
  - `plugins/cordova-plugin-blu-sdk/src/ios/BLUs.framework/BLUs`
  - `plugins/cordova-plugin-blu-sdk/src/ios/WikitudeSDK.framework/WikitudeSDK`
 
-If at least one of the files size is less than 1mb then it was not downloaded properly from the Git LFS
-**Reason**: Caching issues with `Git LFS` and `npm`
+If at least one of the files size is less than 1mb then it was not downloaded properly from the Git LFS.
+
+**Reason**: Caching issues with `Git LFS` and `npm`.
+
 **Solution**: Possible solutions to the issue are:
 - running `git lfs pull` manually from the root of the project may resolve the issue
 - manually copying files from repo to locations above to replace meta files with real ones
