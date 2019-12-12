@@ -44,6 +44,7 @@ cordova build ios
 cordova build android
 ```
 iOS notes:
+- For plugin to add you may need Cocoapods. Run `sudo gem install cocoapods` to install them.
 - This plugin requires a signing of code. You should open a generated project (after step 2) by xcode and select a necessary provisioning profile.
 - iOS sdk works only with real devices (not simulators). For build your project you should connect any device with iOS.
 
