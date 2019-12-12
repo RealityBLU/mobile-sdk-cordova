@@ -10,6 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 
 #import "WTWikitudeTypes.h"
+#import "WTDeprecation.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -227,6 +228,32 @@ extern NSString * const kWTScreenshotImageKey;
  */
 - (void)architectView:(WTArchitectView *)architectView didSwitchToActiveCaptureDevicePosition:(AVCaptureDevicePosition)activeCaptureDevicePosition;
 
+/**
+ * This method is called when code in the JavaScript file calls 'prompt()'
+ *
+ * @param architectView The architect view that tried to access a restriced API and failed
+ * @param prompt Prompt text requested
+ */
+- (NSString *)architectView:(WTArchitectView *)architectView didRequestPrompt:(NSString *)prompt;
+
+/**
+ * This method is called when code in the JavaScript file calls 'confirm()'
+ *
+ * @param architectView The architect view that tried to access a restriced API and failed
+ * @param message Message to display on panel
+ */
+- (BOOL)architectView:(WTArchitectView *)architectView didRequestConfirmPanelWithMessage:(NSString *)message;
+
+/**
+ * This method is called when code in the JavaScript file calls 'alert()'
+ *
+ * @param architectView The architect view that tried to access a restriced API and failed
+ * @param message Message to display on alert
+ */
+- (void)architectView:(WTArchitectView *)architectView didRequestAlertWithMessage:(NSString *)message;
+
+
+
 @end
 
 
@@ -257,8 +284,18 @@ extern NSString * const kWTScreenshotImageKey;
  */
 @property (nonatomic, assign) WTFeatures                                                requiredFeatures;
 
-
 /** @name Accessing Device Compatibility */
+/**
+ * This method should be used to determine if the current device supports all features that are required.
+ *
+ * @deprecated Use isDeviceSupportingFeatures:error: instead.
+ * @param requiredFeatures Bitmask that describes wich features are used from the Wikitude SDK.
+ * @param error An error object containing more information why the device is not supported if the return value is NO.
+ *
+ * @return true if the device supports all required features, false otherwise.
+ */
++ (BOOL)isDeviceSupportedForRequiredFeatures:(WTFeatures)requiredFeatures error:(NSError **)error WT_DEPRECATED_SINCE(8.3.0, "Use isDeviceSupportingFeatures:error: instead.");
+
 /**
  * This method should be used to determine if the current device supports all features that are required.
  *
@@ -267,7 +304,7 @@ extern NSString * const kWTScreenshotImageKey;
  *
  * @return true if the device supports all required features, false otherwise.
  */
-+ (BOOL)isDeviceSupportedForRequiredFeatures:(WTFeatures)requiredFeatures error:(NSError **)error;
++ (BOOL)isDeviceSupportingFeatures:(WTFeatures)requiredFeatures error:(NSError **)error;
 
 /** @name Accessing ARchitect settings */
 /**
@@ -283,20 +320,6 @@ extern NSString * const kWTScreenshotImageKey;
  * @return The current available SDKBuildInformation within the SKD.
  */
 + (WTSDKBuildInformation *)SDKBuildInformation;
-
-
-/** @name Initializing a WTArchitectView Object */
-/**
- * Returns a newly initialized architect view with the given motion manager object.
- *
- * @param frame A CGRect describing the size of the view
- * @param motionManagerOrNil A CMMotionManager object which should be used from the SDK. If nil is given, the SDK will create there own CMMotionManager object.
- *
- * @return A newly initialized WTArchitectView object.
- *
- * @discussion This is the designated initializer for this class.
- */
-- (instancetype)initWithFrame:(CGRect)frame motionManager:(nullable CMMotionManager *)motionManagerOrNil WT_DEPRECATED_SINCE(7.0.0, "Use -init or -initWithFrame: instead and implement a WTExternalCMMotionManagerDataAccessMode in case the hosting application already created an instance of the CMMotionManager class.");
 
 /**
  * Enables SDK features based on the given license key.
@@ -319,23 +342,6 @@ extern NSString * const kWTScreenshotImageKey;
  */
 - (WTNavigation *)loadArchitectWorldFromURL:(NSURL *)architectWorldURL;
 
- /**
- * Deprecated. Please use -loadArchitectWorldFromURL instead and the requiredFeatures property
- *
- * Loads the ARchitect World specified by the given URL. If an ARchitect World is already loaded all it's created objects are destroyed before the new one will be loaded.
- *
- * Architect Worlds can be either loaded from the application bundle or a remote server.
- *
- * Architect Worlds can be loaded with different required features. Features specifies which SDK functionalities are required by the World. For example the WTFeature_2DTracking does not start any GPS location related APIs and the user is not interrupted with a location access alert. As a result any geo related SDK functionalities do not work but the target image recognition is faster and the SDK does not cosume as much CPU performance than with an enabled GPS module. Choose the most suitable mode for your ARchitect World to experience the full functionality and the best performance.
- *
- * It is possible to load a different Architect World with a different augmented reality mode using the same architect view instance.
- *
- * @param architectWorldURL The URL that points to the ARchitect world.
- * @param requiredFeatures Required features who specifies in more detail which functionality is used by the ARchitect World.
- *
- * @return WTNavigation a navigation object representing the requested URL load and the finally loaded URL (They may differ because of some redirects)
- */
-- (WTNavigation *)loadArchitectWorldFromURL:(NSURL *)architectWorldURL withRequiredFeatures:(WTFeatures)requiredFeatures WT_DEPRECATED_SINCE(6.0.0, "requiredFeatures are now a property of WTArchitectView. Use -loadArchitectWorldFromURL: instead.");
 
 /**
  * Reloads the Architect World URL that was passed at last to the `-loadArchitectWorldFromURL:withRequiredFeatures` method.
@@ -376,6 +382,12 @@ extern NSString * const kWTScreenshotImageKey;
 
 /** @name Managing the WTArchitectView rotation behavior */
 /**
+ * This method can be called to force a layout of this view including all it's subviews.
+ * In general this is not necessary as this view overrides layoutSubviews to handle view size changes automatically
+ */
+- (void)shouldTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)transitionCoordinator;
+
+/**
  * Use this method to set the auto rotation behavior for the WTArchitectview.
  *
  * You should pass YES if you wan't your WTArchitectView to autoamtically change rotation to the new interface orientation.
@@ -383,7 +395,7 @@ extern NSString * const kWTScreenshotImageKey;
  * @param shouldAutoRotate Should your SDK view change orientation automatically
  * @param interfaceOrientation The interface orientation the device is going to take on
  */
-- (void)setShouldRotate:(BOOL)shouldAutoRotate toInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
+- (void)setShouldRotate:(BOOL)shouldAutoRotate toInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation WT_DEPRECATED_SINCE(8.1.1, "This class implements -layoutSubviews to handle layout changes automatically. Please refer to `-shouldTransitionToSize:withTransitionCoordinator` for additional information.");
 
 /**
  * Retrieves the current auto rotate behavior.
@@ -461,6 +473,7 @@ extern NSString * const kWTScreenshotImageKey;
  * This method clears the cache used by the webView, as well as the internal caches used by the SDK.
  */
 - (void)clearCache;
+
 
 @end
 
