@@ -109,6 +109,7 @@ const PlaceHolder = {
             return;
         }
         Tracker.trackerImage(cam);
+        uiUtil.setDisabledLock(true);
     },
 
     showPoorConnection: function () {

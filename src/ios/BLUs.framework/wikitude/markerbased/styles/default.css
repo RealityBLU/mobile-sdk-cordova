@@ -36,13 +36,13 @@
     cursor: pointer;
     position: absolute;
     width: 50vw;
-    text-align: center;
+    text-align: left;
     height: 13vw;
     font-family: Roboto;
-    font-size: 26px;
-    line-height: 13vw;
+    font-size: 16px;
+    line-height: 12vw;
     outline: none;
-    padding: 0;
+    padding-left: 10px;
     background-color: #69C6B0;
     border-radius: 3px;
     color: #ffffff;
@@ -61,7 +61,7 @@
 }
 
 .dropdown_exp_list .fa {
-    line-height: 13vw;
+    line-height: 12vw;
     padding-right: 10px;
     position: absolute;
     right: 0;
@@ -93,7 +93,7 @@
     position: relative;
     height: 10vw;
     line-height: 10vw;
-    font-size: 19px;
+    font-size: 15px;
     text-align: left;
     padding: 0 10px;
     cursor: pointer;
@@ -121,7 +121,7 @@
     white-space: nowrap;
     display: inline-block;
     position: relative;
-    max-width: 69%;
+    max-width: 90%;
 }
 
 .big-text-child {
@@ -789,7 +789,7 @@
     .dropdown_exp_list_button {
         width: 60vh;
         height: 9vh;
-        line-height: 9vh;
+        line-height: 8vh;
     }
 
     .dropdown_exp_list {
@@ -798,7 +798,7 @@
     }
 
     .dropdown_exp_list .fa {
-        line-height: 9vh;
+        line-height: 8vh;
     }
 
     .dropdown_exp_list_content {

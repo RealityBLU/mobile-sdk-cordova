@@ -2,12 +2,14 @@ var PlatformHandler = {
     oldUrlHandler: function (param) {
         if (param && param !== "") {
             AnalyticsPart.sendUrlEvent(param);
-            //for iOS
-            //AR.context.openInBrowser(str, true);
-            //for android
+
             if (param.indexOf("tel:") !== -1) {
                 NativeBridge.tellNativeToPhoneCall(param);
             } else {
+                if (PlatformHandler.platformString() === "ios") {
+                    NativeBridge.handleButtonActionInNative(Constants.BTN_ACTION_MODE_URL, param);
+                    return;
+                }
                 let ext = this.getExt(param).toLowerCase();
                 if ([".mov", ".mp4", ".m4v", "3gp"].indexOf(ext) > -1) {
                     AR.context.startVideoPlayer(param);

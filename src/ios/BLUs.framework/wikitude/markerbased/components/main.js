@@ -95,7 +95,7 @@ const World = {
     },
 
     toggleSnappingNew: function () {
-        uiUtil.setDisabledLock(true);
+        SceneBuilder.clearAllItemsOnScene();
         if (SceneBuilder.snapped) {
             SceneBuilder.snapped = !SceneBuilder.snapped;
             SceneBuilder.snappedChangingOrientation = false;
@@ -121,7 +121,6 @@ const World = {
                 if (!isSingleScanEnabled) Tracker.startRecognition(World.intervalRecognition);
                 if (isMarkerLost) {
                     SceneBuilder.isClearLockScreen = true;
-                    SceneBuilder.clearAllItemsOnScene();
                     NativeBridge.sendExperiencePlayStop();
                 } else {
                     SceneBuilder.createScene3D();

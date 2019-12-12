@@ -56,6 +56,9 @@ var SceneBuilder = {
         return proofing + marker + dynamic;
     },
     isSuccessResponseFromServer: function (response, json) {
+        //  Sometimes isSuccessResponseFromServer could return true for empty data response 
+        //  e.g. data = { message: "success" }
+        //  this is used for Backward compatibility for example while scanning expired experience 
         if (TextUtils.isEmpty(json.message)) {
             World.arLog("new_json response is empty");
             World.arLog("app will try to use old json");
@@ -136,6 +139,7 @@ var SceneBuilder = {
         } else {
             uiUtil.hideProgressBar();
         }
+        if (!Sounds.isAllAutoSoundsStarted() || !Videos.isAllAutoVideosStarted()) return;
         if (loadedItems) {
             loadedItems.forEach(loadedItem => {
                 if (loadedItem.type === "models") {
@@ -149,9 +153,12 @@ var SceneBuilder = {
             loadedItems = [];
         }
         PlaceHolder.destroyProgressBar3D();
+        uiUtil.setDisabledLock(false);
+        Videos.startAutoVideos();
+        Sounds.startAutoSounds();
         animator.parseAnimations(Models3D.modelsOnScene());
         if (SceneBuilder.snapped) {
-            SceneBuilder.startStreamingDrawables();
+            uiUtil.invertToggleButton();
         } else {
             if (isMarkerLost) {
                 SceneBuilder.stopStreamingDrawables();
@@ -195,7 +202,7 @@ var SceneBuilder = {
     },
     fillData: function (expId, data) {
         let isSame = JSON.stringify(data) === SceneBuilder.lastData;
-        if (!isSame) {
+        if (!isSame || SceneBuilder.isProofing) {
             SceneBuilder.lastData = JSON.stringify(data);
             SceneBuilder.getData(data);
         } else {
@@ -330,7 +337,6 @@ var SceneBuilder = {
             Videos.autoVideos();
             Sounds.autoSounds();
         }
-        uiUtil.setDisabledLock(false);
     },
     stopStreamingDrawables() {
         Videos.pauseAllVideos();

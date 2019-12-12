@@ -6,15 +6,15 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		dGnAy8zlwWd5/lk5UPPu3M4JaDY=
+		1TTZe7jJWLZ8khOV/Pu7I59hBSs=
 		</data>
 		<key>BLUControllers.storyboardc/3ia-97-pCv-view-5Be-Du-UlF.nib/objects-13.0+.nib</key>
 		<data>
-		7Kpi5CK0GmLxrWDe+mNS9k2Dtv0=
+		GFNB8oQhES4T2x9WjZ3v2QEVAgs=
 		</data>
 		<key>BLUControllers.storyboardc/3ia-97-pCv-view-5Be-Du-UlF.nib/runtime.nib</key>
 		<data>
-		/pz9tkkrZ82EznU2+aR0zf98ZsU=
+		EkcpVqyXkM2X5rfCWApIqrb3a3M=
 		</data>
 		<key>BLUControllers.storyboardc/Info.plist</key>
 		<data>
@@ -22,27 +22,27 @@
 		</data>
 		<key>BLUControllers.storyboardc/arController.nib/objects-13.0+.nib</key>
 		<data>
-		GJeXdfxRLJvlR87ZJXo0SS3x98U=
+		VdpEhKSLg0Tu1ohi5DDgI0gAQMs=
 		</data>
 		<key>BLUControllers.storyboardc/arController.nib/runtime.nib</key>
 		<data>
-		TtaMpateO+wYlvDOnrFIyXMjuxQ=
+		hYFiFANE28cjd1W+9xHd+chy9Ec=
 		</data>
 		<key>BLUControllers.storyboardc/qrController.nib/objects-13.0+.nib</key>
 		<data>
-		Bl297drcFbIN8kDp7DvnNKnlrgM=
+		9K2Acu43bcneceE8XsnveDdWCgA=
 		</data>
 		<key>BLUControllers.storyboardc/qrController.nib/runtime.nib</key>
 		<data>
-		cIPBgFCxP5iGwDmZaEQeooSIIo0=
+		b77tWJkWkMr2fcbbE6Yv0V6IQWs=
 		</data>
 		<key>BLUControllers.storyboardc/rIt-Bp-PPM-view-G9g-Dh-lay.nib/objects-13.0+.nib</key>
 		<data>
-		ijtXwgSL68m+aeeASVFtLzwiCyw=
+		cV0IZoCNn7lQsNxceya5tFw0uDc=
 		</data>
 		<key>BLUControllers.storyboardc/rIt-Bp-PPM-view-G9g-Dh-lay.nib/runtime.nib</key>
 		<data>
-		RENwOPoYtmBDfCyk+nN0M8hQ3oM=
+		hF5b7MKJa1nb3I3v6K8x9oNI6P8=
 		</data>
 		<key>GoogleService-Info.plist</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Headers/BLUs-Swift.h</key>
 		<data>
-		51jyDubXTr8QIgyCeoB7RtxLsc8=
+		c+lILny4BO9iDJ653dUy1nyraq8=
 		</data>
 		<key>Headers/BLUs.h</key>
 		<data>
@@ -78,35 +78,39 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		U/ZBaSyZFoqrUdhl2q+kMkmI4xk=
+		XKhaZEuosZaFl/EhkTVmeWPxzgw=
 		</data>
 		<key>Modules/BLUs.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		H0RKdY1hHZTk3Uhk8vsvsOv63dU=
+		Gjw+5NuZXL92zsEKTso9w8nPBUM=
 		</data>
 		<key>Modules/BLUs.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		cNd6ukf+FBcBK9Om6GsFLiPSwnI=
+		owBWEpI44ZnsK9dlZp62wl5b60U=
 		</data>
 		<key>Modules/BLUs.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		5rOYlRR71712dd5UFuYXWw/UZUI=
+		Ulr9eINrE7/gGAucWBHJimW6Tv8=
 		</data>
 		<key>Modules/BLUs.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		H0RKdY1hHZTk3Uhk8vsvsOv63dU=
+		Gjw+5NuZXL92zsEKTso9w8nPBUM=
 		</data>
 		<key>Modules/BLUs.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		cNd6ukf+FBcBK9Om6GsFLiPSwnI=
+		owBWEpI44ZnsK9dlZp62wl5b60U=
 		</data>
 		<key>Modules/BLUs.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		5rOYlRR71712dd5UFuYXWw/UZUI=
+		Ulr9eINrE7/gGAucWBHJimW6Tv8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		RpGyaqWQr1DYbNlRlKwlKiN18s8=
+		</data>
+		<key>strip_framework.sh</key>
+		<data>
+		cWlj/XLMEoPz/QcO6T4eZfrS9dY=
 		</data>
 		<key>wikitude/data.json</key>
 		<data>
@@ -239,42 +243,6 @@
 		<key>wikitude/libs/font-awesome-4.7.0/scss/font-awesome.scss</key>
 		<data>
 		3YNkjqW8gy+Hw8G/lWxU3sBlqb0=
-		</data>
-		<key>wikitude/libs/jquery/images/ajax-loader.gif</key>
-		<data>
-		r7Wo1RXseyxOXYv8y0kPtbYDEcM=
-		</data>
-		<key>wikitude/libs/jquery/images/icons-18-black.png</key>
-		<data>
-		fV43xwMC0a1FUHHrEQTXG/DBquU=
-		</data>
-		<key>wikitude/libs/jquery/images/icons-18-white.png</key>
-		<data>
-		FoGyzN43urjxWXVJWG9YEbNJ4Wg=
-		</data>
-		<key>wikitude/libs/jquery/images/icons-36-black.png</key>
-		<data>
-		IzyOtnVBPDa1SVQVEqAjKDWlUXE=
-		</data>
-		<key>wikitude/libs/jquery/images/icons-36-white.png</key>
-		<data>
-		wMpruSGjsWnC8bZ3Bo4vu1ny7JU=
-		</data>
-		<key>wikitude/libs/jquery/jquery-1.9.1.min.js</key>
-		<data>
-		rknlaZnYKAJydFXwuoO2Os2Qois=
-		</data>
-		<key>wikitude/libs/jquery/jquery-mobile-transparent-ui-overlay.css</key>
-		<data>
-		ibm5+XkDT0XfdWIyKAbuY5g94C8=
-		</data>
-		<key>wikitude/libs/jquery/jquery.mobile-1.3.2.min.css</key>
-		<data>
-		AEx4+UesCwqs758KAqGqeo+ihpQ=
-		</data>
-		<key>wikitude/libs/jquery/jquery.mobile-1.3.2.min.js</key>
-		<data>
-		0/pvGpYeI17p4AHFyEcYBy+zYAs=
 		</data>
 		<key>wikitude/libs/themify-icons/SVG/Italic.svg</key>
 		<data>
@@ -1874,11 +1842,11 @@
 		</data>
 		<key>wikitude/markerbased/components/buttons.js</key>
 		<data>
-		J/3iNnhu23JxEcy+MsZrjgpbuhE=
+		C2ZWcOgCWoJwbECeCiXTksha294=
 		</data>
 		<key>wikitude/markerbased/components/fileUtil.js</key>
 		<data>
-		1Uao5zMvVSMRcRTp2nBjK9CyM/I=
+		BjIt9dmlY0OIsNHoJ/GzFYMj0wY=
 		</data>
 		<key>wikitude/markerbased/components/images.js</key>
 		<data>
@@ -1886,7 +1854,7 @@
 		</data>
 		<key>wikitude/markerbased/components/main.js</key>
 		<data>
-		Y5K+tfgLVaigeym1LpL5gHbwWt4=
+		+ym5aqoc5UDKEjox5REzj2lhuDI=
 		</data>
 		<key>wikitude/markerbased/components/math.js</key>
 		<data>
@@ -1898,19 +1866,19 @@
 		</data>
 		<key>wikitude/markerbased/components/nativeBridge.js</key>
 		<data>
-		4s5kbvG1DyMohs8lWM+EdiZcqpc=
+		+mYKO3ewsBgBbtboi8gIIGD9IUs=
 		</data>
 		<key>wikitude/markerbased/components/placeHolder.js</key>
 		<data>
-		9gCtMihY/xzH6Rs4vAIw21HQPe0=
+		N6rkDfgQCD66k6qSrXV9wpKfP+4=
 		</data>
 		<key>wikitude/markerbased/components/platformHandler.js</key>
 		<data>
-		a0O0xiNpV+tjs0Av7mw6+cEW8Zg=
+		FgFkH9Z/WLWAwkVFHhRF2gKc6QY=
 		</data>
 		<key>wikitude/markerbased/components/sceneBuilder.js</key>
 		<data>
-		+lAStVSQf8lQm1wYNJEZht5l+Ag=
+		Pi8WN5R/ewfagP6hER6aTdf1eR0=
 		</data>
 		<key>wikitude/markerbased/components/simpleAlert.js</key>
 		<data>
@@ -1918,7 +1886,7 @@
 		</data>
 		<key>wikitude/markerbased/components/sounds.js</key>
 		<data>
-		2evwKwWtRhmqEUwCCUHV4h14YKg=
+		t26BXLQfA03V6pZSOSywDBOm8EU=
 		</data>
 		<key>wikitude/markerbased/components/textUtils.js</key>
 		<data>
@@ -1930,11 +1898,11 @@
 		</data>
 		<key>wikitude/markerbased/components/uiUtil.js</key>
 		<data>
-		KKOh6de9MBxIQxWBN/ZCb5fty0k=
+		qaNsT02a5v0H+lvWdsnFlf5FQ38=
 		</data>
 		<key>wikitude/markerbased/components/videos.js</key>
 		<data>
-		kfkY2gLukjRie4rFwW+VstC6298=
+		pTKaRRynwFOZE5ay0AYP8AgakDk=
 		</data>
 		<key>wikitude/markerbased/helpers/constants.js</key>
 		<data>
@@ -1958,11 +1926,11 @@
 		</data>
 		<key>wikitude/markerbased/index.html</key>
 		<data>
-		nplzYICq5x0nX1nFCTUjNNtIXg8=
+		QBkubCIUnJDLrHdW1m81EmjL1hQ=
 		</data>
 		<key>wikitude/markerbased/styles/default.css</key>
 		<data>
-		p8dVDyTc1xm/kedCnUblOg1Z7ZM=
+		15Y/WJge+ErAo9DFwsJSRuTyhyE=
 		</data>
 		<key>wikitude/markerbased/styles/popup.css</key>
 		<data>
@@ -2031,21 +1999,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			tFtvl+8AvyAXj190+Yh9jydGE0WBflZgw3+y3LvuZQU=
+			hxZHY14xvKiuA/zJ8Cp7u0RsN5PzCPt953ddlSb52vQ=
 			</data>
 		</dict>
 		<key>BLUControllers.storyboardc/3ia-97-pCv-view-5Be-Du-UlF.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			sN7ljv8X8AiHftTHcOmx6Z7JUzfaMxgsWDrJqaVSY2k=
+			q0QQdniUL6m56q56++xIRFEFusmCCwMuSJ0ZgdEEP0A=
 			</data>
 		</dict>
 		<key>BLUControllers.storyboardc/3ia-97-pCv-view-5Be-Du-UlF.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			51z53D88+NF3cJotE+9EheHJ4aWPBArLx4IjJYTWaKs=
+			koPaSXVD0epCz6Y1cFGkt5uO6jV57H0+K7NE7sn7b7c=
 			</data>
 		</dict>
 		<key>BLUControllers.storyboardc/Info.plist</key>
@@ -2059,42 +2027,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			90YN5jTmifcNp/h3FRszyydwp20vGDcFkxWc8DQsGT8=
+			Jvy79OhY9vXjL93xhA/yONKgFIenEWNdg6qSscVU6r0=
 			</data>
 		</dict>
 		<key>BLUControllers.storyboardc/arController.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Fj8f/iX/3t0I6mGQz+274d4j2VWEh98ywq3WgsV/wms=
+			yMm+f3mAuxGwRuB96M64vW8pOj+gKZE95YgBnx5rVik=
 			</data>
 		</dict>
 		<key>BLUControllers.storyboardc/qrController.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nxJY2AY+IMepRHfVgERVcKc13tSku3n1qJGUdyJwq8U=
+			QYjEI4z+MIctJIuPflOxwljxauoucu4l216tj3gE9cc=
 			</data>
 		</dict>
 		<key>BLUControllers.storyboardc/qrController.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			yCKmX+U14NCfWoXt2IDchBsTxqNj9fP6jDxbGFMONjU=
+			+lWpYXK7nedOCOCPG06lC27ZeXgRhmdnVbdN2I4HeNQ=
 			</data>
 		</dict>
 		<key>BLUControllers.storyboardc/rIt-Bp-PPM-view-G9g-Dh-lay.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			De9LyDy8T98FjldIQ3SPnznNDkeCbt8F1N0zkuk1cIo=
+			UAOBF5CqJdM2x4FutWfnTic2ixaBSvq3muPuWJ8qbu4=
 			</data>
 		</dict>
 		<key>BLUControllers.storyboardc/rIt-Bp-PPM-view-G9g-Dh-lay.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Y5Q3744IHhC80qH/pTslFw6a7sdu0BIXJsYfYvPPwrg=
+			pASHauLG9NyPaN6MXiiMfuVEZaoC+9qkMwo4LYK0oF0=
 			</data>
 		</dict>
 		<key>GoogleService-Info.plist</key>
@@ -2108,7 +2076,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ExR1N79USL8W0Mb5vdM7rn11mYx0JcH+l6IobBKciSg=
+			yBMG6VO+iRChQQVZZW48mlLLAtCyp5Sexi0zcoE3vvQ=
 			</data>
 		</dict>
 		<key>Headers/BLUs.h</key>
@@ -2157,42 +2125,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			TKfb72CuCpqnqmmHpWsUln97/46VmmY2KSKJhwtlKiU=
+			1OJAD/48/XZolMYkPlqtFlN95uhDQN9mc9ZnsIJwhZI=
 			</data>
 		</dict>
 		<key>Modules/BLUs.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			uDTXGyT6nWjc2q7sPLvSJwaTyW+Luoise5CKLZGahSo=
+			HlRkF2xWKOK4QOY3kwxX+bJq7zwdw0oMkhhPYKWL0PY=
 			</data>
 		</dict>
 		<key>Modules/BLUs.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qMafdM973TDf6dXcqhrTaqoqpxOzH19OFrtF6d6VZfU=
+			po6VXXd13ePTRF8S+ehGvZEPurwPNJF6ByvqpKitMVI=
 			</data>
 		</dict>
 		<key>Modules/BLUs.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			TKfb72CuCpqnqmmHpWsUln97/46VmmY2KSKJhwtlKiU=
+			1OJAD/48/XZolMYkPlqtFlN95uhDQN9mc9ZnsIJwhZI=
 			</data>
 		</dict>
 		<key>Modules/BLUs.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			uDTXGyT6nWjc2q7sPLvSJwaTyW+Luoise5CKLZGahSo=
+			HlRkF2xWKOK4QOY3kwxX+bJq7zwdw0oMkhhPYKWL0PY=
 			</data>
 		</dict>
 		<key>Modules/BLUs.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qMafdM973TDf6dXcqhrTaqoqpxOzH19OFrtF6d6VZfU=
+			po6VXXd13ePTRF8S+ehGvZEPurwPNJF6ByvqpKitMVI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -2200,6 +2168,13 @@
 			<key>hash2</key>
 			<data>
 			viCZFXtJLQNXqa9C21JdCTRDlnqReJuUKGQr/67vfzM=
+			</data>
+		</dict>
+		<key>strip_framework.sh</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			NSa8CgLZ+kW3cTeadpx2W1aurBYX/oBAgBZX81K2r2Q=
 			</data>
 		</dict>
 		<key>wikitude/data.json</key>
@@ -2431,69 +2406,6 @@
 			<key>hash2</key>
 			<data>
 			TLSgDKCLbkVuCfL77s3FqxP3yRvL6iYzAMgUrvP/z0M=
-			</data>
-		</dict>
-		<key>wikitude/libs/jquery/images/ajax-loader.gif</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			atFZeQWHru0uJZg1bqZZ/jJ8mZdvckOJmwEWlbmtUm8=
-			</data>
-		</dict>
-		<key>wikitude/libs/jquery/images/icons-18-black.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			YkloCw4iOzmFvDlLV2Pcmdkx/LYvMmxVJldjvs8XHjs=
-			</data>
-		</dict>
-		<key>wikitude/libs/jquery/images/icons-18-white.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			rfh6AUoBhUrc5DNWD/6xZFcAUrnAtQ84kV+DONk81bo=
-			</data>
-		</dict>
-		<key>wikitude/libs/jquery/images/icons-36-black.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			CDwe2XTGtNK+OrFVpNR/wjcfe2UiQDgqBOFT83YFSiU=
-			</data>
-		</dict>
-		<key>wikitude/libs/jquery/images/icons-36-white.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			6+18cXLgNxnQ4htI9uvF5UNE7bjDVDwlywa5m1R11DQ=
-			</data>
-		</dict>
-		<key>wikitude/libs/jquery/jquery-1.9.1.min.js</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			wS9gmOZBqsqWxgIVgA8Y9WcQOa7PgSIX+rPA0VL2rbQ=
-			</data>
-		</dict>
-		<key>wikitude/libs/jquery/jquery-mobile-transparent-ui-overlay.css</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			Z9W9p+wak7SBe3tXEPbsEylEnmakPy0429HwQpr5vJo=
-			</data>
-		</dict>
-		<key>wikitude/libs/jquery/jquery.mobile-1.3.2.min.css</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			svR3sW/HQy7WzCBK1bTaLah5ZuCp0aJr87sBL10QSqw=
-			</data>
-		</dict>
-		<key>wikitude/libs/jquery/jquery.mobile-1.3.2.min.js</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			PCsrkztcyLqLREhhcihZiegSoFnAzd65vBJ9HjDPiSQ=
 			</data>
 		</dict>
 		<key>wikitude/libs/themify-icons/SVG/Italic.svg</key>
@@ -5293,14 +5205,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			4f2sUhXzNW9dEshs+MSzqcNXj/crrM/mnsbq3adOHbw=
+			3otu9g32ClxciH7RVl79Nr5de7oBwstSaovDlBTrk4M=
 			</data>
 		</dict>
 		<key>wikitude/markerbased/components/fileUtil.js</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zyVJLg2UV6eY6D1GcltTWnKA0AXkaqXAHnmZka26daU=
+			6I7dMzziOrV1gwqPjYFlng9xs+O9R80kXz5niusr9Mk=
 			</data>
 		</dict>
 		<key>wikitude/markerbased/components/images.js</key>
@@ -5314,7 +5226,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			vsxp/Ospi/yFZjqKtljkLCfQ/QUiuLXrRG1Tzf+6uSk=
+			jrocDTBH+LqmusK/NM+i+CoP3j+CadIuluaC/C6MkoI=
 			</data>
 		</dict>
 		<key>wikitude/markerbased/components/math.js</key>
@@ -5335,28 +5247,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			B8/gf+D6M2YZcqYLjqtQuaUNNuG4q70iuQz1SRqaeM8=
+			GRgFBw8iVe/8wiHugBblb1B1eGQriuuQFGN0nhRbZno=
 			</data>
 		</dict>
 		<key>wikitude/markerbased/components/placeHolder.js</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Dp9mJvLSOh2XdDkAGxVy4IHBDxzANmm5MTYzulDqxR8=
+			kaYsYMFlGJ6DokAMkgT5x+UGrjFY0oFSPOuUfutozBg=
 			</data>
 		</dict>
 		<key>wikitude/markerbased/components/platformHandler.js</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			adzyqgHu9OMQKcO3kHwH2Q9lwpv0aY6YRlU+IwmWPHo=
+			7SzwfbR1VQrGIQFJwv+C4DHCe95zCNvrksqSYCDvj5o=
 			</data>
 		</dict>
 		<key>wikitude/markerbased/components/sceneBuilder.js</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			u9FNotab1rGLhufYWjtk6k1pIL8yvOtIid7jG3Gb2Ho=
+			VXGWXqF9lpn37X2p6O8h+cvPWlapcGOXgC2P3xR5pc0=
 			</data>
 		</dict>
 		<key>wikitude/markerbased/components/simpleAlert.js</key>
@@ -5370,7 +5282,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Da0mQjxfAF93TsntLhi464TAlVcChZ1rkq4ucUD4SAk=
+			SEVhoruBpP7sEDeJJrY4kZu5YuSzHA4qHM5FCivZ+b8=
 			</data>
 		</dict>
 		<key>wikitude/markerbased/components/textUtils.js</key>
@@ -5391,14 +5303,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			vj5g0osaUGzQlb2fPNkbJ8M8DXJU48hHV7pQMLGygo4=
+			QB/gDNQt7N3dMAQv8PJIYLEbZ+AajbPIY1vk9M4y/Jw=
 			</data>
 		</dict>
 		<key>wikitude/markerbased/components/videos.js</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			0ynapfSvZmO+UL/OgNtaj444p8rOokwxMvLwdZ13BBk=
+			BLej+snk+Y+/v+QVOwrwP3wEM3oqXJTWdgCSOR3RDnA=
 			</data>
 		</dict>
 		<key>wikitude/markerbased/helpers/constants.js</key>
@@ -5440,14 +5352,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dguS07/25FN58B1CuaY4piIP0B4xNqNgSj4YY3AP+II=
+			Wfyr2P7n/KjRAgrHxbsuz93kRJyBtci7t7GpaoVwjME=
 			</data>
 		</dict>
 		<key>wikitude/markerbased/styles/default.css</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			FiEJfrXyMVcTsGwMAP+uZJCyGIScyN2Zev5MUprK71Y=
+			RZyN9hrVUwiyUuXeZBsjJFTDkFmsTbS86AaotBQ0ep8=
 			</data>
 		</dict>
 		<key>wikitude/markerbased/styles/popup.css</key>

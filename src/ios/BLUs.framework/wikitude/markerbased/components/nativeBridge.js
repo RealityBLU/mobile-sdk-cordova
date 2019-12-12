@@ -36,6 +36,10 @@ var NativeBridge = {
         Tracker.createTracker();
     },
 
+    setupUiCustomizationData: function (data) {
+        uiCustomization.customizationJson = JSON.parse(data);
+    },
+
     setLastLocation: function (latitude, longitude) {
         World.currentLatitude = latitude;
         World.currentLongitude = longitude;

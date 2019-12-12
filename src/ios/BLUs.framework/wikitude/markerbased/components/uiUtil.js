@@ -217,10 +217,11 @@ const uiUtil = {
                     elDiv.classList.add('active');
                 }
                 if (res.name === 'Sub:') {
-                    elDiv.style.paddingLeft = '20px';
+                    elDiv.style.paddingLeft = '15px';
                 }
                 dropdownContent.appendChild(elDiv);
                 elDiv.ontouchstart = (event) => {
+                    this.hideLock();
                     event.cancelable = true;
                     if (event.cancelable) {
                         event.preventDefault();
@@ -312,12 +313,11 @@ function checkFlight(check) {
 }
 
 
-
 const uiCustomization = {
 
     customizationFolderName: "/BLUcustomization",
 
-    customizationJSON: null,
+    customizationJson: null,
 
     loadingSpinnerAssetPath: null,
     loadingSpinnerFrames: null,
@@ -326,6 +326,10 @@ const uiCustomization = {
     surfaceSpinnerReady: null,
 
     init: async function () {
+        //  For iOS platform we init customizationJson directly inside
+        //  NativeBridge.setupUiCustomizationData(jsonString) method
+        if (PlatformHandler.platformString() === "ios") return;
+        
         const filePath =
             PlatformHandler.applicationDirectoryPath() +
             this.customizationFolderName +
@@ -333,15 +337,15 @@ const uiCustomization = {
 
         const fileData = await FileUtil.readTextFile(filePath);
 
-        if (fileData) this.customizationJSON = JSON.parse(fileData);
+        if (fileData) this.customizationJson = JSON.parse(fileData);
     },
 
     customize: async function () {
         await this.init();
 
-        if (!this.customizationJSON) return;
+        if (!this.customizationJson) return;
 
-        const json = this.customizationJSON;
+        const json = this.customizationJson;
 
         if (json.markerbased !== undefined) {
             this.customizeElement(scanningSpinner, json.markerbased["scanning-spinner"]);
@@ -376,9 +380,9 @@ const uiCustomization = {
     },
 
     customizeSurfaceSpinner: async function () {
-        if (!this.customizationJSON) return;
+        if (!this.customizationJson) return;
 
-        const json = this.customizationJSON;
+        const json = this.customizationJson;
         if (json.markerless !== undefined) {
             const surfaceSpinnerSearchPath =
                 PlatformHandler.applicationDirectoryPath() +
@@ -395,9 +399,9 @@ const uiCustomization = {
     },
 
     customizeLoadingSpinner: async function () {
-        if (!this.customizationJSON) return;
+        if (!this.customizationJson) return;
 
-        const json = this.customizationJSON;
+        const json = this.customizationJson;
         if (json.markerbased !== undefined) {
             const loadingSpinnerPath =
                 PlatformHandler.applicationDirectoryPath() +

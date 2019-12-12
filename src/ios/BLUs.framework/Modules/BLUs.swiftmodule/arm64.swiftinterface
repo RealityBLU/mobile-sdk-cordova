@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.1.2 effective-4.1.50 (swiftlang-1100.0.278 clang-1100.0.33.9)
+// swift-compiler-version: Apple Swift version 5.1.3 effective-4.1.50 (swiftlang-1100.0.282.1 clang-1100.0.33.15)
 // swift-module-flags: -target arm64-apple-ios11.1 -enable-objc-interop -enable-library-evolution -swift-version 4 -enforce-exclusivity=checked -O -module-name BLUs
 import AVFoundation
 import AdSupport
@@ -230,7 +230,9 @@ public typealias TaskCallback = (BLUs.BLUError?) -> Swift.Void
   public static func prepareMarkerbased(_ completion: @escaping BLUs.PreparationCallback)
   public static func prepareMarkerbased(withOptions options: BLUs.MarkerbasedOptions, completion: @escaping BLUs.PreparationCallback)
   public static func prepareMarkerlessExperiences(_ experiences: [BLUs.MarkerlessExperience], withProgress progress: ((Swift.Float) -> Swift.Void)?, completion: @escaping BLUs.PreparationCallback)
+  public static func prepareMarkerlessExperience(withId identifier: Swift.Int, andProgress progress: ((Swift.Float) -> Swift.Void)?, completion: @escaping BLUs.PreparationCallback)
   public static func prepareMarkerlessExperiences(_ experiences: [BLUs.MarkerlessExperience], completion: @escaping BLUs.PreparationCallback)
+  public static func prepareMarkerlessExperience(withId identifier: Swift.Int, completion: @escaping BLUs.PreparationCallback)
   @objc override dynamic public init()
   @objc deinit
 }

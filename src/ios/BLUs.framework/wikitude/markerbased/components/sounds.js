@@ -3,6 +3,9 @@ let soundsManualRes = new Map();
 let soundsAuto = new Map();
 let soundsManual = new Map();
 let soundManualCurrent = null;
+let autoSoundsOnScene = 0;
+let autoSoundsOnSceneStarted = 0;
+let autoSoundsForStart = [];
 var Sounds = {
     addSound: function (value) {
         let audioRaw = value;
@@ -31,18 +34,23 @@ var Sounds = {
     },
 
     autoSounds: function () {
+        autoSoundsOnScene = 0;
+        autoSoundsOnSceneStarted = 0;
         if (soundsAutoRes.length > 0) {
             soundsAutoRes.forEach(sa => {
                 if (!soundsAuto.get(sa.uniqueID)) {
                     let asound = new AR.Sound(sa.url, {
                         onLoaded: function () {
-                            asound.play(-1);
+                            autoSoundsForStart.push(asound);
+                            autoSoundsOnSceneStarted++;
+                            SceneBuilder.displaySceneData();
                         },
                         onError: function () {
                         },
                         onFinishedPlaying: function () {
                         }
                     });
+                    autoSoundsOnScene++;
                     soundsAuto.set(sa.uniqueID, asound);
                     asound.uniqueID = sa.uniqueID;
                     asound.name = sa.name;
@@ -50,6 +58,22 @@ var Sounds = {
                 }
             })
         }
+        if (autoSoundsOnSceneStarted === 0 && autoSoundsOnScene === 0) {
+            SceneBuilder.displaySceneData();
+        }
+    },
+
+    isAllAutoSoundsStarted() {
+        if (autoSoundsOnScene <= autoSoundsOnSceneStarted) {
+            autoSoundsOnScene = 0;
+            autoSoundsOnSceneStarted = 0;
+            return true;
+        } else return false;
+    },
+
+    startAutoSounds() {
+        autoSoundsForStart.forEach(audio => audio.play(-1));
+        autoSoundsForStart = [];
     },
 
     buttonClick: function (param) {

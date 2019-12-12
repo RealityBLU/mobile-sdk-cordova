@@ -4,8 +4,8 @@ let personalVideos = [];
 let autoVideosOnScene = 0;
 let autoVideosOnSceneStarted = 0;
 let currentFullVideo = null;
+let autoVideosForStart = [];
 var Videos = {
-
     videoOnScene: function () {
         return itemsOnScene.get('video');
     },
@@ -108,7 +108,7 @@ var Videos = {
                         }
                     }
                     let autoVideo = Videos.createVideoDrawableIfPossible(vExtended);
-                    Videos.startCreatedAutoVideo(autoVideo);
+                    autoVideosForStart.push(autoVideo);
                 }
             });
             if (personalVideosCount > 0) {
@@ -131,8 +131,7 @@ var Videos = {
 
                 if (TextUtils.isEmpty(videoUrl) || videoUrl.length < 5) {
                     autoVideosOnScene -= 1;
-
-                    Videos.checkIfAllAutoVideosStarted();
+                    SceneBuilder.displaySceneData();
                 } else {
                     itemVideo[i].url = videoUrl;
                     let vExtended = {
@@ -172,12 +171,17 @@ var Videos = {
         VideoPart.playVideo(autoVideo);
       },
     */
-    checkIfAllAutoVideosStarted() {
+    isAllAutoVideosStarted() {
         if (autoVideosOnScene <= autoVideosOnSceneStarted) {
             autoVideosOnScene = 0;
             autoVideosOnSceneStarted = 0;
-            SceneBuilder.displaySceneData();
-        }
+            return true;
+        } else return false;
+    },
+
+    startAutoVideos() {
+        autoVideosForStart.forEach(video => Videos.startCreatedAutoVideo(video));
+        autoVideosForStart = [];
     },
 
     createManualVideo: function (v) {
@@ -201,9 +205,11 @@ var Videos = {
             isPlaying: false,
             isFinished: false,
             isHide: false,
-            onPlaybackStarted: function () {
+            onLoaded: function () {
                 autoVideosOnSceneStarted += 1;
-                Videos.checkIfAllAutoVideosStarted();
+                SceneBuilder.displaySceneData();
+            },
+            onPlaybackStarted: function () {
                 PlaceHolder.hidePlaceholderForItem(vi);
             },
             onError: function (message) {
@@ -216,8 +222,6 @@ var Videos = {
                     }, 2000);
                 } else {
                 }
-            },
-            onLoaded: function () {
             },
             onFinishedPlaying: function () {
                 if (TextUtils.isExist(vi.uniqueID)) {

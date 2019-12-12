@@ -31,7 +31,20 @@ var Buttons = {
                 }
             });
         }
+
+        function timeoutFunc() {
+            btn.isClicked = false;
+            clearTimeout(timeoutFunc)
+        }
+        btn.isClicked = false;
+
         btn.onClick = function () {
+            if (btn.isClicked) {
+                return;
+            } else {
+                btn.isClicked = true;
+                setTimeout(timeoutFunc, 500)
+            }
             if (isToggle) {
                 AnalyticsPart.sendToggleEvent(btn, btn.isChecked);
                 btn.isChecked = !btn.isChecked;
@@ -60,9 +73,11 @@ var Buttons = {
                     Buttons.performActionOnClick(btn, btnInput, sortedActions[i]);
                 }
             }
+            return true;
         };
         return btn;
     },
+
     isExternalAction: function (action) {
         switch (action.id) {
             case Constants.BTN_ACTION_MODE_CALENDAR:
@@ -202,6 +217,7 @@ var Buttons = {
             Tracker.trackable.drawables.removeCamDrawable(Buttons.buttonsOnScene()[b]);
             Buttons.buttonsOnScene()[b].destroy();
         }
+        this.resetItemsOnSceneButton();
     },
     resetItemsOnSceneButton: function () {
         itemsOnScene.set('buttons', []);
