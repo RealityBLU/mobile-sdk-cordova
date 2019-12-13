@@ -5,7 +5,8 @@ var path = require('path');
 const xcodeProjPath = fromDir('platforms/ios', '.xcodeproj', false);
 const projectPath = xcodeProjPath + '/project.pbxproj';
 const myProj = xcode.project(projectPath);
-const script = 'sh "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/BLUs.framework/strip_framework.sh" -s -p "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/BLUs.framework" sh "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/WikitudeSDK.framework/strip_wikitude_framework.sh" -s -p "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/WikitudeSDK.framework"';
+const script = 'sh "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/BLUs.framework/strip_framework.sh" -s -p "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/BLUs.framework" \
+                sh "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/WikitudeSDK.framework/strip_wikitude_framework.sh" -s -p "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/WikitudeSDK.framework"';
 var options = { shellPath: '/bin/sh', shellScript: script };
 
 myProj.parse(function(err) {
