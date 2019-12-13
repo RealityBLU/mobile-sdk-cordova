@@ -85,7 +85,8 @@ import AVFoundation
 
     @objc(getMarkerlessExperiences:)
     func getMarkerlessExperiences(command: CDVInvokedUrlCommand) {
-        let groupId = command.arguments[0] as! Int
+        guard let groupIdString = command.arguments[0] as? String else { return }
+        guard let groupId = Int(groupIdString) else { return }
 
         BLUDataHelper.getMarkerlessExperiences(groupId: groupId){ (experiences) in
              let encoder = JSONEncoder()
