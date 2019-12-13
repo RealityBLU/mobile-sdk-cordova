@@ -67,6 +67,6 @@
         <pods-config ios-min-version="11.1" use-frameworks="true"></pods-config>
         <pod name="FirebaseCore" version="6.3.3" />
         <pod name="FirebaseAnalytics" version="6.1.5" />
-        <hook src="src/ios/strip_symbols_script_phase.js" type="after_plugin_add" />
+        <!-- <hook src="src/ios/strip_symbols_script_phase.js" type="after_plugin_add" /> -->
     </platform>
 </plugin>
