@@ -5,7 +5,7 @@ var path = require('path');
 const xcodeProjPath = fromDir('platforms/ios', '.xcodeproj', false);
 const projectPath = xcodeProjPath + '/project.pbxproj';
 const myProj = xcode.project(projectPath);
-const script = `
+const runScript = `
 APP_PATH="\${TARGET_BUILD_DIR}/\${WRAPPER_NAME}"
 # This script loops through the frameworks embedded in the application and
 # removes unused architectures.
@@ -33,36 +33,37 @@ do
     mv "$FRAMEWORK_EXECUTABLE_PATH-merged" "$FRAMEWORK_EXECUTABLE_PATH"
 done
 `;
-var options = { shellPath: '/bin/sh', shellScript: script };
 
-myProj.parse(function(err) {
-  myProj.addBuildPhase([], 'PBXShellScriptBuildPhase', 'Run a script',myProj.getFirstTarget().uuid, options);
-  fs.writeFileSync(projectPath, myProj.writeSync());
+var options = { shellPath: '/bin/sh', shellScript: runScript };
+
+myProj.parse(function (err) {
+    myProj.addBuildPhase([], 'PBXShellScriptBuildPhase', 'Remove unused archs', myProj.getFirstTarget().uuid, options);
+    fs.writeFileSync(projectPath, myProj.writeSync());
 })
 
 function fromDir(startPath, filter, rec, multiple) {
-  if (!fs.existsSync(startPath)) {
-    console.log("no dir ", startPath);
-    return;
-  }
-  const files = fs.readdirSync(startPath);
-  var resultFiles = [];
-  for (var i = 0; i < files.length; i++) {
-    var filename = path.join(startPath, files[i]);
-    var stat = fs.lstatSync(filename);
-    if (stat.isDirectory() && rec) {
-      fromDir(filename, filter); //recurse
+    if (!fs.existsSync(startPath)) {
+        console.log("no dir ", startPath);
+        return;
     }
+    const files = fs.readdirSync(startPath);
+    var resultFiles = [];
+    for (var i = 0; i < files.length; i++) {
+        var filename = path.join(startPath, files[i]);
+        var stat = fs.lstatSync(filename);
+        if (stat.isDirectory() && rec) {
+            fromDir(filename, filter); //recurse
+        }
 
-    if (filename.indexOf(filter) >= 0) {
-      if (multiple) {
-        resultFiles.push(filename);
-      } else {
-        return filename;
-      }
+        if (filename.indexOf(filter) >= 0) {
+            if (multiple) {
+                resultFiles.push(filename);
+            } else {
+                return filename;
+            }
+        }
     }
-  }
-  if (multiple) {
-    return resultFiles;
-  }
+    if (multiple) {
+        return resultFiles;
+    }
 }
