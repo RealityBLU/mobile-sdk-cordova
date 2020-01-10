@@ -26,7 +26,7 @@ git lfs install
 
 ## 2. Add plugin to a project
 ```sh
-cordova plugin add https://github.com/RealityBLU/mobile-sdk-cordova.git#v1.2.0
+cordova plugin add https://github.com/RealityBLU/mobile-sdk-cordova.git#v1.2.1
 ```
 It can takes some minutes because a plugin size is ~250MB.
 
@@ -150,12 +150,6 @@ Structure of the customization.json
 ```
 
 # Resolving issues
-
-**Error**: Failed to install 'cordova-plugin-blu-sdk': CordovaError: Version of installed plugin: "cordova-support-kotlin@1.1.0" does not satisfy dependency plugin requirement "cordova-support-kotlin@^1.2.0".
-
-**Reason**: Conflict of versions in the 3rd party plugin.
-
-**Solution**: Remove existing `platforms` and `plugins` folder then repeat setup plugin steps.
 ___
 **Error**: `npm ERR! 404 'cordova-plugin-blu-sdk' is not in the npm registry.`
 

@@ -1,6 +1,6 @@
 {
     "name": "@blu/cordova-plugin-blu-sdk",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "description": "Plugin provides BLU SDK functions",
     "cordova": {
         "id": "cordova-plugin-blu-sdk",

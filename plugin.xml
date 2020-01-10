@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="cordova-plugin-blu-sdk" version="1.2.0" 
-    xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+<plugin id="cordova-plugin-blu-sdk" version="1.2.0"
+    xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <name>BLU</name>
     <description>Plugin provides BLU SDK functions</description>
@@ -10,9 +10,12 @@
         <clobbers target="cordova.plugins.blu"/>
     </js-module>
 
-    <dependency id="cordova-plugin-add-swift-support" version="2.0.2"/>
+    <!-- Android specific -->
+    <dependency id="cordova-support-kotlin" version="1.2.1"/>
     <dependency id="cordova-plugin-android-fragmentactivity" version="0.0.9"/>
-    <dependency id="cordova-support-kotlin" version="1.2.0"/>
+
+    <!-- IOS specific -->
+    <dependency id="cordova-plugin-add-swift-support" version="2.0.2"/>
     <dependency id="cordova-plugin-cocoapod-support" version="1.6.2"/>
 
     <platform name="android">
