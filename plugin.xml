@@ -66,7 +66,7 @@
         <source-file src="src/ios/BLU.swift"/>
         <framework src="src/ios/BLUs.framework" embed="true" custom="true" />
         <framework src="src/ios/WikitudeSDK.framework" embed="true" custom="true" />
-        <hook src="src/ios/strip_symbols.js" type="after_plugin_add" />
+        <!-- <hook src="src/ios/strip_symbols.js" type="after_plugin_add" /> -->
         <resource-file src="BLUcustomization" target="BLUcustomization" />
 
         <pods-config ios-min-version="11.1" use-frameworks="true"></pods-config>
