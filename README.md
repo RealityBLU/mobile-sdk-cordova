@@ -73,7 +73,7 @@ blu.startMarkerbased(options, () => {
 Available options
 ```js
 {
-    isProofingEnabled // for proofing mode, boolean, by default false
+    isProofingEnabled: false // for proofing mode, boolean
 }
 ```
 After that user can start pointing the camera at the marker. When the marker is recognized, the experience will be downloaded and shown.
