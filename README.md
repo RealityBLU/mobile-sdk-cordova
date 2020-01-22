@@ -90,15 +90,7 @@ blu.getMarkerbasedMarkers((markers) => {
 
 ## Markerless
 Markerless API allows you to upload your own models and create groups with them, that allows user find what they need to see. Markerless API helps you to download and initialize user selected experiences as well as prepare augmented reality camera screen to appear.
-Note that `arrayOfExperiences` should be array of full experience objects and not only ids.
 
-```js
-blu.startMarkerless(arrayOfExperiences, () => {
-    // handle a success result
-}, (error) => {
-    // handle an error result
-});
-```
 To get the list of formed groups, you'll need to make the following method call
 ```js
 blu.getMarkerlessGroups((groups) => {
@@ -115,6 +107,16 @@ blu.getMarkerlessExperiences(groupId, (experiences) => {
     // handle an error result
 });
 ```
+
+Now you can present camera screen to display downloaded experiences:
+```js
+blu.startMarkerless(arrayOfExperiences, () => {
+    // handle a success result
+}, (error) => {
+    // handle an error result
+});
+```
+> Note that `arrayOfExperiences` should be array of full experience objects and not only ids.
 
 # Customization
 You can customize UI components such as images of scanning and icons of buttons by modifying a `customization.json` in the folder `BLUcustomization`. This folder is placed in the generated platform project.
