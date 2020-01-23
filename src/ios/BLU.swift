@@ -5,6 +5,8 @@ import AVFoundation
 @objc(BLU) class BLUPlugin: CDVPlugin {
     @objc(init:)
     func initialize(command: CDVInvokedUrlCommand) {
+        AVCaptureDevice.requestAccess(for: AVMediaType.video) { response in }
+
         let key = command.arguments[0] as! String
 
         BLU.initialize(key) { (error) in
