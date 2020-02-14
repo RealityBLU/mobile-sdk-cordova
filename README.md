@@ -26,7 +26,7 @@ git lfs install
 
 ## 2. Add plugin to a project
 ```sh
-cordova plugin add https://github.com/RealityBLU/mobile-sdk-cordova.git#v1.2.1
+cordova plugin add https://github.com/RealityBLU/mobile-sdk-cordova.git#v1.2.2
 ```
 It can takes some minutes because a plugin size is ~250MB.
 
