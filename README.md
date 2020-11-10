@@ -137,16 +137,24 @@ Structure of the customization.json
         "scanning-spinner-text-svg": "/markerbased/scanning-spinner.svg",
         "loading-spinner": "/markerbased/loading-spinner.png",
         "loading-spinner-frames": 48,
+        "scanning-spinner-size": 60,    //(default: 50)
         "camera-switch": "/markerbased/camera-switch.png",
         "lock-screen-on": "/markerbased/lock-screen-on.png",
         "lock-screen-off": "/markerbased/lock-screen-off.png",
         "qr-button": "/markerbased/qr-button.png"
     },
+    "markerless": {
+        "back-to-gallery": "/markerless/back-to-gallery.png",
+        "snapshot": "/markerless/cam-photo.png",
+        "surface-spinner-sprite-search": "/markerless/sprite_color.png",
+        "surface-spinner-sprite-ready": "/markerless/sprite_white.png"
+    },
     "common": {
         "back-button": "/common/back-button.png",
         "snapshot": "/common/snapshot.png",
         "flight-off": "/common/flight-off.png",
-        "flight-on": "/common/flight-on.png"
+        "flight-on": "/common/flight-on.png",
+        "icons-size" : 12   //(default: 9)
     }
 }
 ```
