@@ -7,14 +7,25 @@ repositories{
 
 dependencies {
     implementation(name: 'BLUAndroidSDK', ext: 'aar')
-    implementation 'com.android.support:appcompat-v7:27.+'
-    implementation 'com.google.code.gson:gson:2.8.5'
-    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
-    implementation 'com.squareup.okhttp3:okhttp:3.9.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.0'
-    implementation 'com.google.ar:core:1.1.0'
-    implementation 'com.google.firebase:firebase-core:16.0.0'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation "com.google.android.exoplayer:exoplayer-core:2.12.1"
+    implementation "com.google.android.exoplayer:exoplayer-dash:2.12.1"
+    implementation "com.google.android.exoplayer:exoplayer-ui:2.12.1"
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.10"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9"
+    implementation "androidx.preference:preference-ktx:1.1.1"
+
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
+    implementation 'com.google.ar:core:1.15.0'
+    implementation 'com.google.firebase:firebase-core:18.0.0'
     implementation 'com.yanzhenjie.zbar:camera:1.0.0'
 }
 
