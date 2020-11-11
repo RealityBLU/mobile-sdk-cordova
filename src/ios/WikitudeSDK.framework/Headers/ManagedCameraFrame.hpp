@@ -16,15 +16,13 @@
 #include <functional>
 
 #include "CameraFrame.hpp"
+#include "CompilerAttributes.hpp"
 
 
-namespace wikitude { namespace sdk {
-
-    namespace impl {
-
+namespace wikitude::sdk {
 
         class CameraFramePlane;
-        class ManagedCameraFrame {
+        class WT_EXPORT_API ManagedCameraFrame {
         public:
             ManagedCameraFrame(); /* delete me because I can’t be constructed without a sdk::CameraFrame */
 
@@ -72,9 +70,7 @@ namespace wikitude { namespace sdk {
             std::shared_ptr<std::mutex>                         _safeStorageMutex;
             std::shared_ptr<int>                                _refCount = nullptr;
         };
-    }
-    using impl::ManagedCameraFrame;
-}}
+}
 
 #endif /* ManagedCameraFrame_hpp */
 

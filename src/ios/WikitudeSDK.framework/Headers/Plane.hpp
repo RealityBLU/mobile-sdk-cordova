@@ -15,12 +15,10 @@
 
 #include "PlaneType.hpp"
 #include "Geometry.hpp"
+#include "CompilerAttributes.hpp"
 
 
-namespace wikitude { namespace sdk {
-
-    namespace impl {
-
+namespace wikitude::sdk {
 
         /** @addtogroup InstantTracking
          *  @{
@@ -31,7 +29,7 @@ namespace wikitude { namespace sdk {
 
         class Matrix4;
         class Vector3;
-        class Plane {
+        class WT_EXPORT_API Plane {
         public:
             virtual ~Plane() = default;
 
@@ -105,10 +103,7 @@ namespace wikitude { namespace sdk {
              */
             virtual const std::vector<Point<float>>& getConvexHull() const = 0;
         };
-    }
-
-    using impl::Plane;
-}}
+}
 
 #endif /* __cplusplus */
 

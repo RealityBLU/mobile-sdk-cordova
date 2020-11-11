@@ -12,23 +12,16 @@
 #ifdef __cplusplus
 
 #include "PlatformTrackingHandler.hpp"
+#include "CompilerAttributes.hpp"
 
 
-namespace wikitude {
-    namespace universal_sdk {
-        namespace impl {
-            class TrackingParametersInternal;
-        }
-        using impl::TrackingParametersInternal;
-    }
+namespace wikitude::universal_sdk {
+    class TrackingParametersInternal;
 }
 
-namespace wikitude { namespace sdk {
+namespace wikitude::sdk {
 
-    namespace impl {
-
-
-        class TrackingParameters {
+        class WT_EXPORT_API TrackingParameters {
         public:
             long getProcessedFrameId();
             void addProcessedFrameIdChangedHandler(std::uintptr_t handleOwner_, ProcessedFrameIdChangedHandler processedFrameIdChangedHandler_);
@@ -39,9 +32,7 @@ namespace wikitude { namespace sdk {
         protected:
             universal_sdk::TrackingParametersInternal*  _internalTrackingParameters;
         };
-    }
-    using impl::TrackingParameters;
-}}
+}
 
 #endif /* __cplusplus */
 

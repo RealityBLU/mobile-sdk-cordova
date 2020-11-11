@@ -11,14 +11,15 @@
 
 #ifdef __cplusplus
 
-namespace wikitude { namespace sdk {
+#include "CompilerAttributes.hpp"
 
-    namespace impl {
+
+namespace wikitude::sdk {
 
         /** @enum CameraPosition
          *  @brief An enum indicating the physical position of the camera used to capture frames.
          */
-        enum class CameraPosition : int {
+        enum class WT_EXPORT_API CameraPosition : int {
             /** @brief Indicates that the camera position is undefined. Desktop web cams might return this value.
              */
             Unspecified,
@@ -29,9 +30,7 @@ namespace wikitude { namespace sdk {
              */
             Front
         };
-    }
-    using impl::CameraPosition;
-}}
+}
 
 #endif /* __cplusplus */
 

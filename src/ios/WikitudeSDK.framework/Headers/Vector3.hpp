@@ -14,15 +14,16 @@
 #include <iostream>
 #include <iomanip>
 
-namespace wikitude { namespace sdk {
-    
-    namespace impl {
+#include "CompilerAttributes.hpp"
+
+
+namespace wikitude::sdk {
         
         /**
          * A three component float based vector providing utility methods for working with and manipulating 3D vectors. Compatible with Matrix4.
          */
         class Matrix4;
-        class Vector3
+        class WT_EXPORT_API Vector3
         {
         public:
             
@@ -250,7 +251,7 @@ namespace wikitude { namespace sdk {
              *
              * @return The reference to the resulting stream.
              */
-            friend std::ostream& operator<<(std::ostream& os_, const Vector3& v_);
+            friend WT_EXPORT_API std::ostream& operator<<(std::ostream& os_, const Vector3& v_);
             
         public:
             /**
@@ -268,9 +269,7 @@ namespace wikitude { namespace sdk {
              */
             float z;
         };
-    }
-    using impl::Vector3;
-}}
+}
 
 #endif /* __cplusplus */
 

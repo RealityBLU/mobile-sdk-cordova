@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=yes"
+          name="viewport">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <script src="https://www.wikitude.com/libs/architect.js"></script>
+    <script type="text/javascript" src="../ade.js"></script>
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="../libs/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href=../libs/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+<div class="missing-marker-view" id="miss-view-marker">
+    <div class="text-missing-view">
+        <div class="text-miss">You left the object<br>placement area.</div>
+        <div class="text-miss">Return the phone's camera<br>to the object location area</div>
+    </div>
+</div>
+<!-- not used -->
+<div class="arkitcore-instruction-view" id="arkitcore-view">
+    <div class="text-arkitcore-view">
+        <div class="text-arkitcore">
+            Move your phone around until the red
+            circle disappears which is when you<br>can start tracking.
+        </div>
+    </div>
+</div>
+<div id="tracking-model-start-stop-button-container" ontouchstart="logicStartStop()">
+    <span class="tracking-model-start-stop-button">START</span>
+</div>
+<div id="tracking-model-instruction-container" ontouchstart="hideInstructions()">
+    <div class="instruction-container">
+        <div class="default-text">Click the screen to mark the place for another model</div>
+        <div class="not-show-again">
+            <span class="fa fa-eye-slash"></span>
+            <span>Don't show this again</span>
+        </div>
+    </div>
+</div>
+<div data-role="page" id="mainPage" style="background: none;">
+    <input id="tracking-model-back-to-gallery-button-container" ontouchstart="backToGallery()"
+           class="icon-actions tracking-model-back-button"
+           type="image" alt="icon" src="assets/back-to-gallery.png"/>
+    <div id="tracking-model-reset-button-container" class="tracking-model-reset-button"
+         ontouchstart="resetModels()"><span class="icon-actions ti-eraser"></span>
+    </div>
+    <div id="initialization-back-button-container" ontouchstart="backToGallery()"
+         class="initialization-back-button">
+        <span class="icon-actions ti-angle-left"></span>
+    </div>
+    <input id="tracking-model-capture-button-container" ontouchstart="captureScreen()"
+           class="icon-actions tracking-model-capture-button" type="image" alt="icon"
+           src="assets/cam_photo.png"/>
+    <input id="flightOn-button-container" ontouchstart="checkFlight(false)"
+           class="flightOn-camera-button" type="image" alt="icon" src="assets/flight_on.png"/>
+    <input id="flightOff-button-container" ontouchstart="checkFlight(true)"
+           class="flightOff-camera-button" type="image" alt="icon" src="assets/flight_off.png"/>
+    <div id="tracking-controls-container-lower">
+        <div class="tracking-button-number">
+            <div id="model-0">
+                <img id="image-model-0" src="" alt="image">
+            </div>
+        </div>
+        <div class="tracking-button-number">
+            <div id="model-1">
+                <img id="image-model-1" src="" alt="image">
+            </div>
+        </div>
+        <div class="tracking-button-number">
+            <div id="model-2">
+                <img id="image-model-2" src="" alt="image">
+            </div>
+        </div>
+        <div class="tracking-button-number">
+            <div id="model-3">
+                <img id="image-model-3" src="" alt="image">
+            </div>
+        </div>
+        <div class="tracking-button-number">
+            <div id="model-4">
+                <img id="image-model-4" src="" alt="image">
+            </div>
+        </div>
+    </div>
+    <div id="tracking-height-slider-container">
+        <input type="range" min="0.1" value="1.0" max="2.0" step="0.1" class="slider" id="myRange"
+               onchange="World.changeTrackingHeight(value)">
+        <span id="tracking-number-slider"></span>
+    </div>
+</div>
+<script src="../markerbased/helpers/hardwareHelper.js"></script>
+<script>
+    const slider = document.getElementById("myRange");
+    const output = document.getElementById("tracking-number-slider");
+    output.innerHTML = slider.value;
+    slider.oninput = function () {
+        output.innerHTML = this.value;
+    };
+</script>
+<script src="../markerbased/components/constants.js"></script>
+<script src="../markerbased/components/exceptionHelper.js"></script>
+<script src="../markerbased/components/visiabilityHelper.js"></script>
+<script src="../markerbased/components/drawableHelper.js"></script>
+<script src="../markerbased/components/simpleAlert.js"></script>
+<script src="../markerbased/components/textUtils.js"></script>
+<script src="../markerbased/components/videos.js"></script>
+<script src="../markerbased/components/sounds.js"></script>
+<script src="../markerbased/components/animations.js"></script>
+<script src="../markerbased/components/nativeBridge.js"></script>
+<script src="../markerbased/components/placeHolder.js"></script>
+<script src="../markerbased/components/platformHandler.js"></script>
+<script src="../markerbased/components/buttons.js"></script>
+<script src="../markerbased/components/images.js"></script>
+<script src="../markerbased/components/models3D.js"></script>
+<script src="../markerbased/components/analytics.js"></script>
+<script src="../markerbased/components/sceneBuilder.js"></script>
+<script src="../markerbased/components/tracker.js"></script>
+<script src="../markerbased/components/uiUtil.js"></script>
+<script src="js/main.js"></script>
+<script src="../markerbased/components/math.js"></script>
+</body>
+</html>

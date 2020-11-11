@@ -11,16 +11,15 @@
 
 #ifdef __cplusplus
 
+#include "CompilerAttributes.hpp"
 
-namespace wikitude { namespace sdk {
 
-    namespace impl {
+namespace wikitude::sdk {
 
-        
         class RuntimeParameters;
         class CameraParameters;
         class TrackingParameters;
-        class PluginParameterCollection {
+        class WT_EXPORT_API PluginParameterCollection {
         public:
             virtual ~PluginParameterCollection() = default;
 
@@ -33,9 +32,7 @@ namespace wikitude { namespace sdk {
             virtual const TrackingParameters& getTrackingParameters() const = 0;
             virtual TrackingParameters& getTrackingParameters() = 0;
         };
-    }
-    using impl::PluginParameterCollection;
-}}
+}
 
 #endif /* __cplusplus */
 
