@@ -1,14 +1,13 @@
 package org.apache.cordova.blu;
 
-import android.support.v4.app.FragmentActivity;
+import androidx.fragment.app.FragmentActivity;
+
 import com.bluairspace.sdk.helper.Blu;
-import com.bluairspace.sdk.helper.data.BluDataHelper;
+import com.bluairspace.sdk.helper.BluDataHelper;
 import com.bluairspace.sdk.model.MarkerbasedMarker;
 import com.bluairspace.sdk.model.MarkerBasedSettings;
 import com.bluairspace.sdk.model.MarkerlessGroup;
 import com.bluairspace.sdk.model.MarkerlessExperience;
-import com.bluairspace.sdk.helper.callback.TaskCallback;
-import com.bluairspace.sdk.helper.callback.DataCallback;
 
 import java.util.*;
 import java.lang.*;
@@ -16,9 +15,15 @@ import java.lang.*;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 
+import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import com.bluairspace.sdk.model.callback.DataCallback;
+import com.bluairspace.sdk.model.callback.TaskCallback;
+import com.bluairspace.sdk.model.exception.BluairspaceSdkException;
+import com.bluairspace.sdk.util.publicutil.PermissionUtil;
 import com.google.gson.Gson;
 
 public class BLU extends CordovaPlugin {
@@ -75,14 +80,20 @@ public class BLU extends CordovaPlugin {
 
     private void getMarkerbasedMarkers(CallbackContext callbackContext) {
         BluDataHelper.INSTANCE.getMarkerbasedMarkers(new DataCallback<MarkerbasedMarker>() {
+
             @Override
-            public void onSuccess(List<? extends MarkerbasedMarker> list) {
-                callbackContext.success(gson.toJson(list));
+            public void onFail(@NotNull BluairspaceSdkException e) {
+                callbackContext.error(e.getMessage());
             }
 
             @Override
-            public void onFail(String errorMessage) {
-                callbackContext.error(errorMessage);
+            public void onProgress(int i, int i1) {
+
+            }
+
+            @Override
+            public void onSuccess(@NotNull List<? extends MarkerbasedMarker> list) {
+                callbackContext.success(gson.toJson(list));
             }
         });
     }
@@ -91,13 +102,18 @@ public class BLU extends CordovaPlugin {
         BluDataHelper.INSTANCE.getMarkerlessGroups(
             new DataCallback<MarkerlessGroup>() {
                 @Override
-                public void onSuccess(List<? extends MarkerlessGroup> list) {
-                    callbackContext.success(gson.toJson(list));
+                public void onFail(@NotNull BluairspaceSdkException e) {
+                    callbackContext.error(e.getMessage());
                 }
-    
+
                 @Override
-                public void onFail(String errorMessage) {
-                    callbackContext.error(errorMessage);
+                public void onProgress(int i, int i1) {
+
+                }
+
+                @Override
+                public void onSuccess(@NotNull List<? extends MarkerlessGroup> list) {
+                    callbackContext.success(gson.toJson(list));
                 }
             }
         );
@@ -108,27 +124,40 @@ public class BLU extends CordovaPlugin {
             groupId,
             new DataCallback<MarkerlessExperience>() {
                 @Override
-                public void onSuccess(List<? extends MarkerlessExperience> list) {
-                    callbackContext.success(gson.toJson(list));
+                public void onFail(@NotNull BluairspaceSdkException e) {
+                    callbackContext.error(e.getMessage());
                 }
-    
+
                 @Override
-                public void onFail(String errorMessage) {
-                    callbackContext.error(errorMessage);
+                public void onProgress(int i, int i1) {
+
+                }
+
+                @Override
+                public void onSuccess(@NotNull List<? extends MarkerlessExperience> list) {
+                    callbackContext.success(gson.toJson(list));
                 }
             }
         );
     }
 
     private void startMarkerbased(MarkerBasedSettings settings, CallbackContext callbackContext) {
+        if (!PermissionUtil.INSTANCE.isPermissionsGranted(cordova.getContext())) {
+            PermissionUtil.INSTANCE.askPermission((FragmentActivity) cordova.getActivity());
+            return;
+        }
         Blu.INSTANCE.startMarkerbased(
-            (FragmentActivity) cordova.getActivity(), 
+            (FragmentActivity) cordova.getActivity(),
             this.getTaskCallback(callbackContext),
             settings
         );
     }
 
     private void startMarkerless(List<MarkerlessExperience> markers, CallbackContext callbackContext) {
+        if (!PermissionUtil.INSTANCE.isPermissionsGranted(cordova.getContext())) {
+            PermissionUtil.INSTANCE.askPermission((FragmentActivity) cordova.getActivity());
+            return;
+        }
         Blu.INSTANCE.startMarkerless(
             (FragmentActivity) cordova.getActivity(),
             markers,
@@ -144,8 +173,13 @@ public class BLU extends CordovaPlugin {
             }
 
             @Override
-            public void onFail(String errorMessage) {
-                callbackContext.error(errorMessage);
+            public void onFail(BluairspaceSdkException e) {
+                callbackContext.error(e.getMessage());
+            }
+
+            @Override
+            public void onProgress(int i, int i1) {
+
             }
         };
     }
