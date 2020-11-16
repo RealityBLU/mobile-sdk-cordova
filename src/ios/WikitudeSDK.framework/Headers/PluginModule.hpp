@@ -11,21 +11,12 @@
 
 #ifdef __cplusplus
 
-namespace wikitude {
-    namespace sdk {
-        namespace impl {
-            class ManagedCameraFrame;
-        }
-        using impl::ManagedCameraFrame;
-    }
-}
+#include "CompilerAttributes.hpp"
 
-namespace wikitude { namespace sdk {
+namespace wikitude::sdk {
 
-    namespace impl {
-
-
-        class PluginModule {
+        class ManagedCameraFrame;
+        class WT_EXPORT_API PluginModule {
         public:
             virtual ~PluginModule() = default;
 
@@ -33,6 +24,7 @@ namespace wikitude { namespace sdk {
             virtual void resume(unsigned int pausedTime_);
 
             virtual void cameraFrameAvailable(ManagedCameraFrame& managedCameraFrame_);
+            virtual void prepareUpdate();
             virtual void update();
 
             void setEnabled(bool enabled_);
@@ -41,9 +33,7 @@ namespace wikitude { namespace sdk {
         protected:
             bool    _isEnabled = true;
         };
-    }
-    using impl::PluginModule;
-}}
+}
 
 #endif /* __cplusplus */
 

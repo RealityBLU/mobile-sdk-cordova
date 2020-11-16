@@ -18,13 +18,10 @@
 #include "PluginModule.hpp"
 
 
-namespace wikitude { namespace sdk {
+namespace wikitude::sdk {
 
-    namespace impl {
-
-        
         class Positionable;
-        class JavaScriptPluginModule : public PluginModule {
+        class WT_EXPORT_API JavaScriptPluginModule : public PluginModule {
         public:
             class JavaScriptAPI {
             public:
@@ -53,9 +50,7 @@ namespace wikitude { namespace sdk {
             std::function<void(const std::string&)> _callJavaScriptHandler;
             std::vector<std::string>                _pendingJavaScriptCalls;
         };
-    }
-    using impl::JavaScriptPluginModule;
-}}
+}
 
 #endif /* __cplusplus */
 

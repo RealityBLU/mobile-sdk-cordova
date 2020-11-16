@@ -14,23 +14,19 @@
 #include <functional>
 
 #include "Error.hpp"
+#include "CompilerAttributes.hpp"
 
 
-namespace wikitude { namespace sdk {
-
-    namespace impl {
-
+namespace wikitude::sdk {
 
         class RenderableCameraFrame;
-        class RenderableCameraFrameBucket {
+        class WT_EXPORT_API RenderableCameraFrameBucket {
         public:
             virtual ~RenderableCameraFrameBucket() = default;
             
             virtual void getRenderableCameraFrameForId(long id_, std::function<void(RenderableCameraFrame&)> successHandler_, std::function<void(Error&)> errorHandler_) = 0;
         };
-    }
-    using impl::RenderableCameraFrameBucket;
-}}
+}
 
 #endif /* __cplusplus */
 

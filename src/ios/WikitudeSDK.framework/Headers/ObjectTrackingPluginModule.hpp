@@ -16,30 +16,18 @@
 #include "TrackingPluginModule.hpp"
 
 
-namespace wikitude {
-    namespace sdk {
-        namespace impl {
-            class ManagedCameraFrame;
-        }
-        using impl::ManagedCameraFrame;
-    }
-}
+namespace wikitude::sdk {
 
-namespace wikitude { namespace sdk {
-
-    namespace impl {
-
-
+        class ManagedCameraFrame;
+        class ObjectTracker;
         class WT_EXPORT_API ObjectTrackingPluginModule : public TrackingPluginModule {
         public:
             virtual ~ObjectTrackingPluginModule() = default;
 
-            virtual universal_sdk::ObjectState getTrackingState() const = 0;
+            virtual universal_sdk::ObjectState getTrackingState(sdk::ObjectTracker& objectTracker_) const = 0;
             virtual sdk::Matrix4 getViewMatrix() const = 0;
         };
-    }
-    using impl::ObjectTrackingPluginModule;
-}}
+}
 
 #endif /* __cplusplus */
 

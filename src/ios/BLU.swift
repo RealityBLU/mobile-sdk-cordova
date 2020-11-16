@@ -87,8 +87,7 @@ import AVFoundation
 
     @objc(getMarkerlessExperiences:)
     func getMarkerlessExperiences(command: CDVInvokedUrlCommand) {
-        guard let groupIdString = command.arguments[0] as? String else { return }
-        guard let groupId = Int(groupIdString) else { return }
+        guard let groupId = command.arguments[0] as? Int else { return }
 
         BLUDataHelper.getMarkerlessExperiences(groupId: groupId){ (experiences) in
              let encoder = JSONEncoder()
@@ -119,8 +118,8 @@ import AVFoundation
     func startMarkerbased(command: CDVInvokedUrlCommand) {
         var options = MarkerbasedOptions(enableProofing: false)
         
-        if let settings = command.arguments?[0] as? [String:Any] {
-            let isProofingEnabled: Bool = settings["isProofingEnabled"] as! Bool
+        if let settings = command.arguments?[0] as? [String:Any],
+           let isProofingEnabled = settings["isProofingEnabled"] as? Bool {
             options.proofingEnabled = isProofingEnabled;
         }
 

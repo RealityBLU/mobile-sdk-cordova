@@ -11,12 +11,11 @@
 
 #ifdef __cplusplus
 
+#include "CompilerAttributes.hpp"
 
-namespace wikitude { namespace sdk {
+
+namespace wikitude::sdk {
     
-    namespace impl {
-
-
         /** @addtogroup InstantTracking
          *  @{
          */
@@ -24,7 +23,7 @@ namespace wikitude { namespace sdk {
          *  @brief A class that represents a gravity aligned plane, as reported by an instant tracker.
          */
         class Matrix4;
-        class InitializationPose {
+        class WT_EXPORT_API InitializationPose {
         public:
             virtual ~InitializationPose() = default;
             
@@ -55,9 +54,7 @@ namespace wikitude { namespace sdk {
             virtual const Matrix4& getViewMatrix() const = 0;
         };
         /** @}*/
-    }
-    using impl::InitializationPose;
-}}
+}
 
 #endif /* __cplusplus */
 

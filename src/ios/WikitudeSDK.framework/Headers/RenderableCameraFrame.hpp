@@ -13,15 +13,15 @@
 
 #include <vector>
 
+#include "CompilerAttributes.hpp"
+
 #include "CameraFramePlane.hpp"
 #include "CameraFrame.hpp"
 
 
-namespace wikitude { namespace sdk {
+namespace wikitude::sdk {
 
-    namespace impl {
-
-        class RenderableCameraFrame {
+        class WT_EXPORT_API RenderableCameraFrame {
         public:
             RenderableCameraFrame() = default;
             RenderableCameraFrame(RenderableCameraFrame& other_) = delete;
@@ -32,9 +32,7 @@ namespace wikitude { namespace sdk {
             virtual const std::vector<CameraFramePlane>& getData() = 0;
             virtual const sdk::ColorCameraFrameMetadata& getColorMetadata() const = 0;
         };
-    }
-    using impl::RenderableCameraFrame;
-}}
+}
 
 #endif /* __cplusplus */
 

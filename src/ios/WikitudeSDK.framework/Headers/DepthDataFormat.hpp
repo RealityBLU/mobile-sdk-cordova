@@ -11,21 +11,19 @@
 
 #ifdef __cplusplus
 
-namespace wikitude { namespace sdk {
-
-    namespace impl {
+#include "CompilerAttributes.hpp"
 
 
-        enum class DepthDataFormat {
+namespace wikitude::sdk {
+
+        enum class WT_EXPORT_API DepthDataFormat {
             FLOAT_32,
             FLOAT_32_NORMALIZED,
             INTEGER_8,
             INTEGER_16,
             INTEGER_32
         };
-    }
-    using impl::DepthDataFormat;
-}}
+}
 
 #endif /* __cplusplus */
 

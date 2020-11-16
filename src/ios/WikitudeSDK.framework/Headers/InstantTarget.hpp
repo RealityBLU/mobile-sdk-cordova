@@ -11,11 +11,10 @@
 
 #ifdef __cplusplus
 
+#include "CompilerAttributes.hpp"
 
-namespace wikitude { namespace sdk {
 
-    namespace impl {
-
+namespace wikitude::sdk {
 
         /** @addtogroup InstantTracking
         *  @{
@@ -24,7 +23,7 @@ namespace wikitude { namespace sdk {
          *  @brief A class that represents instant targets that are found by an instant tracker.
          */
         class Matrix4;
-        class InstantTarget {
+        class WT_EXPORT_API InstantTarget {
         public:
             virtual ~InstantTarget() = default;
 
@@ -56,9 +55,7 @@ namespace wikitude { namespace sdk {
             virtual const Matrix4& getViewMatrix() const = 0;
         };
         /** @}*/
-    }
-    using impl::InstantTarget;
-}}
+}
 
 #endif /* __cplusplus */
 

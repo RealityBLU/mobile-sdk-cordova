@@ -21,16 +21,15 @@
 #include "DepthDataFormat.hpp"
 #include "CameraFramePlane.hpp"
 #include "Matrix4.hpp"
+#include "CompilerAttributes.hpp"
 
 
-namespace wikitude { namespace sdk {
-
-    namespace impl {
+namespace wikitude::sdk {
 
         /** @class DepthCameraFrameMetadata
          *  @brief A class that encapsulates additional information about depth camera frames.
          */
-        class DepthCameraFrameMetadata {
+        class WT_EXPORT_API DepthCameraFrameMetadata {
         public:
             DepthCameraFrameMetadata(float horizontalFov_, sdk::Size<int> pixelSize_, unsigned int dataSize_, DepthDataFormat depthDataFormat_, bool inverted_, std::int32_t timestampTimescale_);
 
@@ -74,7 +73,7 @@ namespace wikitude { namespace sdk {
             Atan = 3,
         };
 
-        class IntrinsicsCalibration {
+        class WT_EXPORT_API IntrinsicsCalibration {
         public:
             IntrinsicsCalibration(DistortionMode distortionMode_, Point<double> principalPoint_, Point<double> focalLength_, const std::vector<double>& distortion_);
 
@@ -93,7 +92,7 @@ namespace wikitude { namespace sdk {
         /** @class ColorCameraFrameMetadata
          *  @brief A class that encapsulates additional information about color camera frames.
          */
-        class ColorCameraFrameMetadata {
+        class WT_EXPORT_API ColorCameraFrameMetadata {
         public:
             ColorCameraFrameMetadata(float horizontalFov_, sdk::Size<int> pixelSize_, CameraPosition cameraPosition_, ColorSpace frameColorSpace_, std::int32_t timestampTimescale_);
 
@@ -141,11 +140,13 @@ namespace wikitude { namespace sdk {
         /** @class CameraFrame
          *  @brief A class that color and depth frames, along with their metadata and optional pose. The CameraFrame class doesn't copy or retain the color and depth data in any way.
          */
-        class CameraFrame {
+        class WT_EXPORT_API CameraFrame {
         public:
             CameraFrame(long id_, std::int64_t colorTimestamp_, ColorCameraFrameMetadata colorMetadata_, const std::vector<CameraFramePlane>& colorData_);
             CameraFrame(long id_, std::int64_t colorTimestamp_, ColorCameraFrameMetadata colorMetadata_, const std::vector<CameraFramePlane>& colorData_, const Matrix4& pose_);
             CameraFrame(long id_, std::int64_t colorTimestamp_, ColorCameraFrameMetadata colorMetadata_, const std::vector<CameraFramePlane>& colorData_, std::int64_t depthTimestamp_, DepthCameraFrameMetadata depthMetadata_, const void* depthData_);
+            CameraFrame(long id_, std::int64_t colorTimestamp_, ColorCameraFrameMetadata colorMetadata_, const std::vector<CameraFramePlane>& colorData_, std::int64_t depthTimestamp_, DepthCameraFrameMetadata depthMetadata_, const void* depthData_, const void* confidenceDepthData_);
+            CameraFrame(long id_, std::int64_t colorTimestamp_, ColorCameraFrameMetadata colorMetadata_, const std::vector<CameraFramePlane>& colorData_, std::int64_t depthTimestamp_, DepthCameraFrameMetadata depthMetadata_, const void* depthData_, const Matrix4& pose_);
 
             /** @brief Returns unique id used to identify individual frames.
              */
@@ -174,6 +175,10 @@ namespace wikitude { namespace sdk {
             /** @brief Returns a pointer to the depth data, as it was passed through the constructor. When passed to the constructor, it may be nullptr to indicate the absence of depth data.
              */
             const void* getDepthData() const;
+            
+            /** @brief Returns a pointer to the confidence depth data, as it was passed through the constructor. When passed to the constructor, it may be nullptr to indicate the absence of confidence depth data.
+             */
+            const void* getConfidenceDepthData() const;
 
             /** @brief Returns whether this camera frame was initialized with a camera pose. Accessing the camera pose when this method returns false is undefined behaviour.
              */
@@ -193,19 +198,13 @@ namespace wikitude { namespace sdk {
             std::int64_t                            _depthTimestamp;
             DepthCameraFrameMetadata                _depthMetadata;
             const void*                             _depthData;
+            const void*                             _confidenceDepthData;
 
             Matrix4                                 _pose;
             bool                                    _hasPose;
         };
         /** @}*/
-    }
-    using impl::DepthDataFormat;
-    using impl::DepthCameraFrameMetadata;
-    using impl::ColorCameraFrameMetadata;
-    using impl::DistortionMode;
-    using impl::IntrinsicsCalibration;
-    using impl::CameraFrame;
-}}
+}
 
 #endif /* __cplusplus */
 

@@ -14,37 +14,28 @@
 #include <string>
 
 #include "PluginModule.hpp"
+#include "CompilerAttributes.hpp"
 
 
-namespace wikitude {
-    namespace universal_sdk {
-        namespace impl {
-            class BaseTracker;
-        }
-        using impl::BaseTracker;
-    }
+namespace wikitude::universal_sdk {
+    class BaseTracker;
 }
 
-namespace wikitude { namespace sdk {
+namespace wikitude::sdk {
 
-    namespace impl {
-
-
-        class TrackingPluginModule : public PluginModule {
+        class WT_EXPORT_API TrackingPluginModule : public PluginModule {
         public:
             virtual ~TrackingPluginModule() = default;
 
             virtual std::string getIdentifier() const = 0;
 
-            virtual bool canAddActiveTracker() const = 0;
+            virtual bool canAddActiveTracker() const;
             virtual void setActiveTracker(universal_sdk::BaseTracker& /* tracker_ */) {}
-            virtual void resetActiveTracker(universal_sdk::BaseTracker& tracker_) = 0;
+            virtual void resetActiveTracker(universal_sdk::BaseTracker& /* tracker_ */) {};
             virtual void addTracker(universal_sdk::BaseTracker& tracker_) = 0;
             virtual void removeTracker(universal_sdk::BaseTracker& tracker_) = 0;
         };
-    }
-    using impl::TrackingPluginModule;
-}}
+}
 
 #endif /* __cplusplus */
 

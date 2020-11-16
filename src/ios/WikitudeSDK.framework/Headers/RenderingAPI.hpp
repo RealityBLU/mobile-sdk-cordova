@@ -10,12 +10,12 @@
 
 #ifdef __cplusplus
 
+#include "CompilerAttributes.hpp"
 
-namespace wikitude { namespace sdk {
-    
-    namespace impl {
+
+namespace wikitude::sdk {
         
-        enum class RenderingAPI {
+        enum class WT_EXPORT_API RenderingAPI {
             OpenGL_ES_2,
             OpenGL_ES_3,
             Metal,
@@ -23,9 +23,7 @@ namespace wikitude { namespace sdk {
             None,
             RenderingAPIs
         };    
-    }
-    using impl::RenderingAPI;
-}}
+}
 
 #endif /* __cplusplus */
 

@@ -13,23 +13,16 @@
 
 #include "Geometry.hpp"
 #include "CameraPosition.hpp"
+#include "CompilerAttributes.hpp"
 
 #include "PlatformCameraHandler.hpp"
 
 
-namespace wikitude {
-    namespace universal_sdk {
-        namespace impl {
-            class CameraParametersInternal;
-        }
-        using impl::CameraParametersInternal;
-    }
+namespace wikitude::universal_sdk {
+    class CameraParametersInternal;
 }
 
-namespace wikitude { namespace sdk {
-
-    namespace impl {
-
+namespace wikitude::sdk {
 
         /**
          * @brief CameraParameters provide access to camera specific information.
@@ -38,7 +31,7 @@ namespace wikitude { namespace sdk {
          *
          * PlatformComponent developer typically create a subclass and add more getter that are related to platform specific camera information.
          */
-        class CameraParameters {
+        class WT_EXPORT_API CameraParameters {
         public:
 
             /**
@@ -72,9 +65,7 @@ namespace wikitude { namespace sdk {
         protected:
             universal_sdk::CameraParametersInternal*    _internalCameraParameters = nullptr;
         };
-    }
-    using impl::CameraParameters;
-}}
+}
 
 #endif /* __cplusplus */
 

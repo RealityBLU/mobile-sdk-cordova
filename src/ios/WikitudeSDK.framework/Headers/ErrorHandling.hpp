@@ -15,15 +15,12 @@
 #include "Error.hpp"
 
 
-namespace wikitude { namespace sdk {
+namespace wikitude::sdk {
 
-    namespace impl {
-
-
-        struct CallStatus {
+        struct WT_EXPORT_API CallStatus {
         public:
             static CallStatus Success() {
-                return {true, {0, "", ""}};
+                return {true, Error::NoError()};
             }
             
         public:
@@ -43,10 +40,10 @@ namespace wikitude { namespace sdk {
 
 
         template <typename T>
-        struct CallValue {
+        struct WT_EXPORT_API CallValue {
         public:
             static CallValue<T> SuccessCallValue(T value_) {
-                return {value_, {true, {0, "", ""}}};
+                return {value_, {true, Error::NoError()}};
             }
 
         public:
@@ -65,10 +62,7 @@ namespace wikitude { namespace sdk {
             T           _value;
             CallStatus  _status;
         };
-    }
-    using impl::CallStatus;
-    using impl::CallValue;
-}}
+}
 
 #endif /* __cplusplus */
 
