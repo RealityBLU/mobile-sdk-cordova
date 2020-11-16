@@ -11,7 +11,8 @@
 Note: This plugin requires a camera permission. For Android development you should request the `CAMERA` permission in your code (for example by [cordova-plugin-permission](https://www.npmjs.com/package/cordova-plugin-permission)).
 
 # Versions and Compatibility
-- Android SDK version 21+
+- Android SDK version 22+
+- <b>AndroidX</b> support
 - iOS version 11.1+
 - Cordova version 9+
 - git >= 1.8.2
@@ -28,7 +29,11 @@ git lfs install
 ```sh
 cordova plugin add https://github.com/RealityBLU/mobile-sdk-cordova.git#v1.2.2
 ```
-It can takes some minutes because a plugin size is ~250MB.
+It can takes some minutes because a plugin size is ~250MB.\
+For <b>AndroidX</b> support add this plugin
+```sh
+cordova plugin add cordova-plugin-androidx
+```
 
 Important note!
 - The above command should be run for each new environment for set up all dependencies.
